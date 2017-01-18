@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABB961E264F1800D38DE1 /* AppDelegate.swift */; };
-		C55ABB991E264F1800D38DE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABB981E264F1800D38DE1 /* ViewController.swift */; };
+		C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABB981E264F1800D38DE1 /* LookForViewController.swift */; };
 		C55ABB9C1E264F1800D38DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55ABB9A1E264F1800D38DE1 /* Main.storyboard */; };
 		C55ABB9E1E264F1800D38DE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55ABB9D1E264F1800D38DE1 /* Assets.xcassets */; };
 		C55ABBA11E264F1800D38DE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55ABB9F1E264F1800D38DE1 /* LaunchScreen.storyboard */; };
 		C55ABBAC1E264F1800D38DE1 /* TennisBBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBAB1E264F1800D38DE1 /* TennisBBTests.swift */; };
 		C55ABBB71E264F1800D38DE1 /* TennisBBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBB61E264F1800D38DE1 /* TennisBBUITests.swift */; };
 		C55ABBC51E264F8100D38DE1 /* RecruitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */; };
+		C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */; };
+		C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		C55ABB931E264F1800D38DE1 /* TennisBB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisBB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55ABB961E264F1800D38DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C55ABB981E264F1800D38DE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C55ABB981E264F1800D38DE1 /* LookForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForViewController.swift; sourceTree = "<group>"; };
 		C55ABB9B1E264F1800D38DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C55ABB9D1E264F1800D38DE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C55ABBA01E264F1800D38DE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		C55ABBB61E264F1800D38DE1 /* TennisBBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisBBUITests.swift; sourceTree = "<group>"; };
 		C55ABBB81E264F1800D38DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecruitmentViewController.swift; sourceTree = "<group>"; };
+		C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				C55ABB961E264F1800D38DE1 /* AppDelegate.swift */,
-				C55ABB981E264F1800D38DE1 /* ViewController.swift */,
 				C55ABB9A1E264F1800D38DE1 /* Main.storyboard */,
+				C55ABB981E264F1800D38DE1 /* LookForViewController.swift */,
 				C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */,
+				C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */,
+				C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */,
 				C55ABB9D1E264F1800D38DE1 /* Assets.xcassets */,
 				C55ABB9F1E264F1800D38DE1 /* LaunchScreen.storyboard */,
 				C55ABBA21E264F1800D38DE1 /* Info.plist */,
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C55ABB991E264F1800D38DE1 /* ViewController.swift in Sources */,
+				C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */,
+				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
 				C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */,
+				C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */,
 				C55ABBC51E264F8100D38DE1 /* RecruitmentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +515,7 @@
 				C55ABBBD1E264F1800D38DE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C55ABBBE1E264F1800D38DE1 /* Build configuration list for PBXNativeTarget "TennisBBTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +524,7 @@
 				C55ABBC01E264F1800D38DE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C55ABBC11E264F1800D38DE1 /* Build configuration list for PBXNativeTarget "TennisBBUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +533,7 @@
 				C55ABBC31E264F1800D38DE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
