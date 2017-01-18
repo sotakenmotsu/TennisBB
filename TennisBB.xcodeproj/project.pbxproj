@@ -17,6 +17,7 @@
 		C55ABBC51E264F8100D38DE1 /* RecruitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */; };
 		C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */; };
 		C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */; };
+		C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C55ABBCA1E2F7E9400D38DE1 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecruitmentViewController.swift; sourceTree = "<group>"; };
 		C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		C55ABBCA1E2F7E9400D38DE1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */,
 				C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */,
 				C55ABB9D1E264F1800D38DE1 /* Assets.xcassets */,
+				C55ABBCA1E2F7E9400D38DE1 /* icon.png */,
 				C55ABB9F1E264F1800D38DE1 /* LaunchScreen.storyboard */,
 				C55ABBA21E264F1800D38DE1 /* Info.plist */,
 			);
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */,
 				C55ABBA11E264F1800D38DE1 /* LaunchScreen.storyboard in Resources */,
 				C55ABB9E1E264F1800D38DE1 /* Assets.xcassets in Resources */,
 				C55ABB9C1E264F1800D38DE1 /* Main.storyboard in Resources */,
