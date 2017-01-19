@@ -12,11 +12,23 @@ class RecruitmentViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBOutlet weak var LevelSelector: UITextField!
     var pickerView: UIPickerView = UIPickerView()
-    let list = ["ベテラン", "初心者", "まあまあ"]
+    let list = ["", "ベテラン", "初心者", "まあまあ"]
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.showsSelectionIndicator = true
+        
+        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RecruitmentViewController.done))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RecruitmentViewController.cancel))
+        toolbar.setItems([cancelItem, doneItem], animated: true)
+        
+        self.LevelSelector.inputView = pickerView
+        self.LevelSelector.inputAccessoryView = toolbar
 
         // Do any additional setup after loading the view.
     }
