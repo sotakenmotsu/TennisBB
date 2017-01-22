@@ -55,13 +55,19 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Llist.count
-        return Mlist.count
+        if pickerView == LpickerView {
+            return Llist.count
+        }else{
+            return Mlist.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Llist[row]
-        return Mlist[row]
+        if pickerView == LpickerView {
+            return Llist[row]
+        }else{
+            return Mlist[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
