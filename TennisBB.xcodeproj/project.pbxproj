@@ -18,6 +18,7 @@
 		C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */; };
 		C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */; };
 		C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C55ABBCA1E2F7E9400D38DE1 /* icon.png */; };
+		C55ABBCD1E3397E600D38DE1 /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBCC1E3397E600D38DE1 /* ContentsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		C55ABBCA1E2F7E9400D38DE1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
+		C55ABBCC1E3397E600D38DE1 /* ContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				C55ABB9A1E264F1800D38DE1 /* Main.storyboard */,
 				C55ABB981E264F1800D38DE1 /* LookForViewController.swift */,
 				C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */,
+				C55ABBCC1E3397E600D38DE1 /* ContentsViewController.swift */,
 				C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */,
 				C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */,
 				C55ABB9D1E264F1800D38DE1 /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 			files = (
 				C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */,
 				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
+				C55ABBCD1E3397E600D38DE1 /* ContentsViewController.swift in Sources */,
 				C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */,
 				C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */,
 				C55ABBC51E264F8100D38DE1 /* RecruitmentViewController.swift in Sources */,
