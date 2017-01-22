@@ -8,63 +8,17 @@
 
 import UIKit
 
-class RecruitmentViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    @IBOutlet weak var LevelSelector: UITextField!
-    var pickerView: UIPickerView = UIPickerView()
-    let list = ["", "ベテラン", "初心者", "まあまあ"]
-
+class RecruitmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView.showsSelectionIndicator = true
-        
-        let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RecruitmentViewController.done))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RecruitmentViewController.cancel))
-        toolbar.setItems([cancelItem, doneItem], animated: true)
-        
-        self.LevelSelector.inputView = pickerView
-        self.LevelSelector.inputAccessoryView = toolbar
-
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return list.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return list[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.LevelSelector.text = list[row]
-    }
-    
-    func cancel() {
-        self.LevelSelector.text = ""
-        self.LevelSelector.endEditing(true)
-    }
-    
-    func done() {
-        self.LevelSelector.endEditing(true)
-    }
-    
-    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
-        return CGRect(x: x, y: y, width: width, height: height)
     }
     
 
