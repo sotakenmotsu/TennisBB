@@ -17,6 +17,14 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var MemberSelector: UITextField!
     var MpickerView: UIPickerView = UIPickerView()
     let Mlist = ["", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",]
+    
+    @IBOutlet weak var StartSelector: UITextField!
+    var SpickerView: UIPickerView = UIPickerView()
+    let Slist = ["", "７時", "９時", "１１時", "１３時", "１５時", "１７時", "１９時"]
+    
+    @IBOutlet weak var EndSelector: UITextField!
+    var EpickerView: UIPickerView = UIPickerView()
+    let Elist = ["", "７時", "９時", "１１時", "１３時", "１５時", "１７時", "１９時"]
 
 
     override func viewDidLoad() {
@@ -40,6 +48,20 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         self.MemberSelector.inputView = MpickerView
         self.MemberSelector.inputAccessoryView = toolbar
+        
+        SpickerView.delegate = self
+        SpickerView.dataSource = self
+        SpickerView.showsSelectionIndicator = true
+        
+        self.StartSelector.inputView = SpickerView
+        self.StartSelector.inputAccessoryView = toolbar
+        
+        EpickerView.delegate = self
+        EpickerView.dataSource = self
+        EpickerView.showsSelectionIndicator = true
+        
+        self.EndSelector.inputView = EpickerView
+        self.EndSelector.inputAccessoryView = toolbar
 
 
         // Do any additional setup after loading the view.
@@ -57,22 +79,32 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == LpickerView {
             return Llist.count
-        }else{
+        }else if pickerView == MpickerView {
             return Mlist.count
+        }else if pickerView == SpickerView {
+            return Slist.count
+        }else{
+            return Elist.count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == LpickerView {
             return Llist[row]
-        }else{
+        }else if pickerView == MpickerView{
             return Mlist[row]
+        }else if pickerView == SpickerView{
+            return Slist[row]
+        }else{
+            return Elist[row]
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.LevelSelector.text = Llist[row]
         self.MemberSelector.text = Mlist[row]
+        self.StartSelector.text = Slist[row]
+        self.EndSelector.text = Elist[row]
     }
     
     func cancel() {
@@ -80,12 +112,18 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.LevelSelector.endEditing(true)
         self.MemberSelector.text = ""
         self.MemberSelector.endEditing(true)
+        self.StartSelector.text = ""
+        self.StartSelector.endEditing(true)
+        self.EndSelector.text = ""
+        self.EndSelector.endEditing(true)
         
     }
     
     func done() {
         self.LevelSelector.endEditing(true)
         self.MemberSelector.endEditing(true)
+        self.StartSelector.endEditing(true)
+        self.EndSelector.endEditing(true)
     }
     
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
