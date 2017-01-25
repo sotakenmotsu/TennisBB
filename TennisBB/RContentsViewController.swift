@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var LevelSelector: UITextField!
     var LpickerView: UIPickerView = UIPickerView()
@@ -25,8 +25,8 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var EndSelector: UITextField!
     var EpickerView: UIPickerView = UIPickerView()
     let Elist = ["", "７時", "９時", "１１時", "１３時", "１５時", "１７時", "１９時"]
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,8 +35,8 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         LpickerView.showsSelectionIndicator = true
         
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(ContentsViewController.done))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(ContentsViewController.cancel))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RContentsViewController.done))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RContentsViewController.cancel))
         toolbar.setItems([cancelItem, doneItem], animated: true)
         
         self.LevelSelector.inputView = LpickerView
@@ -62,11 +62,11 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         self.EndSelector.inputView = EpickerView
         self.EndSelector.inputAccessoryView = toolbar
-
-
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -135,13 +135,13 @@ class ContentsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return CGRect(x: x, y: y, width: width, height: height)
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
