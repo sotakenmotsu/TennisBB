@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import RealmSwift
 
 class LookForViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -35,7 +37,7 @@ class LookForViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedcell
+        return selectedcell as! Int
     }
     
 }

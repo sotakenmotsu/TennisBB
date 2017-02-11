@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import RealmSwift
 
 class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -25,6 +27,8 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var EndSelector: UITextField!
     var EpickerView: UIPickerView = UIPickerView()
     let Elist = ["", "７時", "９時", "１１時", "１３時", "１５時", "１７時", "１９時"]
+    
+    @IBOutlet var Comment: UITextView!
     
     
     override func viewDidLoad() {
@@ -134,14 +138,21 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
         return CGRect(x: x, y: y, width: width, height: height)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    @IBAction func PostButton(_ sender: UIButton) {
+        let realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        let content = Data()
+        content.place = LevelSelector.text!
+        content.starttime = StartSelector.text!
+        content.endtime = EndSelector.text!
+        content.member = MemberSelector.text!
+        content.level = LevelSelector.text!
+        content.comment = Comment.text!
+        try! realm.write {
+            realm.add(content)
+        }
+        self.dismiss(animated: true, completion: nil)
+
+    }
 }
