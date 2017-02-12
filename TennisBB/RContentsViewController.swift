@@ -142,7 +142,7 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBAction func PostButton(_ sender: UIButton) {
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        let content = Data()
+        let content = Contents()
         content.place = LevelSelector.text!
         content.starttime = StartSelector.text!
         content.endtime = EndSelector.text!

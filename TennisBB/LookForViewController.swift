@@ -14,6 +14,11 @@ class LookForViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var selectedcell: UITableViewCell!
     @IBOutlet weak var tableview: UITableView!
+    var Larray = [String]()
+    var Marray = [String]()
+    var Sarray = [String]()
+    var Earray = [String]()
+    var Carray = [String]()
         
     override func viewDidLoad() {
         super.viewDidLoad()

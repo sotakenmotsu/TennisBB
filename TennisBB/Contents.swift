@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import RealmSwift
 
-class Data: Object {
+class Contents: Object {
     
     dynamic var place = ""
     dynamic var starttime = ""
