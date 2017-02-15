@@ -14,6 +14,8 @@ class LookForViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var selectedcell: UITableViewCell!
     @IBOutlet weak var tableview: UITableView!
+    let realm = try! Realm()
+    let contents = realm.object(Contents)
     var Larray = [String]()
     var Marray = [String]()
     var Sarray = [String]()
