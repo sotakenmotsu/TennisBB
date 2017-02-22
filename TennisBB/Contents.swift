@@ -19,4 +19,19 @@ class Contents: Object {
     dynamic var level = ""
     dynamic var comment = ""
     
+    static let realm = try! Realm()
+    
+    dynamic private var id = 0
+    override static func primaryKey() -> String? {
+        return "id"
     }
+    
+    static func loadAll() -> [Contents] {
+        let contents = realm.objects(Contents.self)
+        var ret: [Contents] = []
+        for content in contents {
+            ret.append(content)
+        }
+        return ret
+    }
+}

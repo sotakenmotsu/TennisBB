@@ -12,20 +12,15 @@ import RealmSwift
 
 class LookForViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let realm = try! Realm()
     var selectedcell: UITableViewCell!
     @IBOutlet weak var tableview: UITableView!
-    let realm = try! Realm()
-    let contents = realm.object(Contents)
-    var Larray = [String]()
-    var Marray = [String]()
-    var Sarray = [String]()
-    var Earray = [String]()
-    var Carray = [String]()
-        
+    var contents: Results<Contents>? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        contents = realm.objects(Contents.self)
         tableview.dataSource = self
         tableview.delegate = self
     }
@@ -40,11 +35,12 @@ class LookForViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return selectedcell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return selectedcell as! Int
+        return contents!.count
     }
     
 }

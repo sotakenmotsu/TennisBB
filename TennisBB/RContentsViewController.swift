@@ -150,7 +150,7 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         content.level = LevelSelector.text!
         content.comment = Comment.text!
         try! realm.write {
-            realm.add(content)
+            realm.add (content)
         }
         self.dismiss(animated: true, completion: nil)
 
