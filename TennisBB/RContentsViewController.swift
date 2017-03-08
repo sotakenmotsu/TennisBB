@@ -28,20 +28,23 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var EpickerView: UIPickerView = UIPickerView()
     let Elist = ["", "７時", "９時", "１１時", "１３時", "１５時", "１７時", "１９時"]
     
+    @IBOutlet weak var DateSelector: UITextField!
+    var DatePicker: UIDatePicker = UIDatePicker()
+    
     @IBOutlet var Comment: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LpickerView.delegate = self
-        LpickerView.dataSource = self
-        LpickerView.showsSelectionIndicator = true
-        
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RContentsViewController.done))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RContentsViewController.cancel))
         toolbar.setItems([cancelItem, doneItem], animated: true)
+        
+        LpickerView.delegate = self
+        LpickerView.dataSource = self
+        LpickerView.showsSelectionIndicator = true
         
         self.LevelSelector.inputView = LpickerView
         self.LevelSelector.inputAccessoryView = toolbar
@@ -66,6 +69,11 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         self.EndSelector.inputView = EpickerView
         self.EndSelector.inputAccessoryView = toolbar
+        
+        DateSelector.text = dateToString(date: NSDate())
+        self.view.addSubview(DateSelector)
+        DatePicker = UIDatePicker()
+        DatePicker.addTarget(action: "DateEvent", for: )
         
         
         // Do any additional setup after loading the view.
@@ -133,6 +141,22 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.MemberSelector.endEditing(true)
         self.StartSelector.endEditing(true)
         self.EndSelector.endEditing(true)
+    }
+    
+    func DateEvent(sender: AnyObject?) {
+        var dateSelector: UIDatePicker = sender as! UIDatePicker
+        self.DateLabel(date: DatePicker.date as NSDate)
+    }
+    
+    func DateLabel(date: NSDate) {
+        DateSelector.text = self.dateToString(date: date)
+    }
+    
+    func dateToString(date: NSDate) -> String {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale!
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter.string(from: date as Date)
     }
     
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
