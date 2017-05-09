@@ -30,6 +30,7 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBOutlet weak var DateSelector: UITextField!
     var DatePicker: UIDatePicker = UIDatePicker()
+    var toolBar: UIToolbar!
     
     @IBOutlet var Comment: UITextView!
     
@@ -70,13 +71,38 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.EndSelector.inputView = EpickerView
         self.EndSelector.inputAccessoryView = toolbar
         
+        DateSelector.placeholder = dateToString(date: NSDate())
         DateSelector.text = dateToString(date: NSDate())
         self.view.addSubview(DateSelector)
         DatePicker = UIDatePicker()
-        DatePicker.addTarget(action: "DateEvent", for: )
+        DatePicker.addTarget(self, action: Selector(("DateEvents")), for: UIControlEvents.valueChanged)
+        DatePicker.datePickerMode = UIDatePickerMode.date
+        DateSelector.inputView = DatePicker
         
+        toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.height, 40.0))
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        toolBar.barStyle = .blackTranslucent
+        toolBar.tintColor = UIColor.white
+        toolBar.backgroundColor = UIColor.black
+        
+        let toolBarBtn      = UIBarButtonItem(title: "完了", style: .bordered, target: self, action: "tappedtoolBarBtn:")
+        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .bordered, target: self, action: "tappedtoolBarBtnToday:")
+        
+        toolBarBtn.tag = 1
+        toolBar.items = [toolBarBtn, toolBarBtnToday]
+        DateSelector.inputAccessoryView = toolBar
         
         // Do any additional setup after loading the view.
+    }
+    
+    func tappedtoolBarBtn(sender: UIBarButtonItem) {
+        DateSelector.resignFirstResponder()
+    }
+    
+    func tappedtoolBarBtnToday(sender: UIBarButtonItem) {
+        DateSelector.resignFirstResponder()
+        DatePicker.date = Date()
+//        changeLabelDate(date: Date())
     }
     
     override func didReceiveMemoryWarning() {
