@@ -71,11 +71,11 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.EndSelector.inputView = EpickerView
         self.EndSelector.inputAccessoryView = toolbar
         
-        DateSelector.placeholder = dateToString(date: NSDate())
-        DateSelector.text = dateToString(date: NSDate())
+        DateSelector.placeholder = dateToString(date: Date())
+        DateSelector.text = dateToString(date: Date())
         self.view.addSubview(DateSelector)
         DatePicker = UIDatePicker()
-        DatePicker.addTarget(self, action: Selector(("DateEvents")), for: UIControlEvents.valueChanged)
+        DatePicker.addTarget(self, action: #selector(DateEvent), for: UIControlEvents.valueChanged)
         DatePicker.datePickerMode = UIDatePickerMode.date
         DateSelector.inputView = DatePicker
         
@@ -85,8 +85,8 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         toolBar.tintColor = UIColor.white
         toolBar.backgroundColor = UIColor.black
         
-        let toolBarBtn      = UIBarButtonItem(title: "完了", style: .bordered, target: self, action: "tappedtoolBarBtn:")
-        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .bordered, target: self, action: "tappedtoolBarBtnToday:")
+        let toolBarBtn      = UIBarButtonItem(title: "完了", style: .bordered, target: self, action: #selector(tappedtoolBarBtn(sender:)))
+        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .bordered, target: self, action: #selector(tappedtoolBarBtnToday(sender:)))
         
         toolBarBtn.tag = 1
         toolBar.items = [toolBarBtn, toolBarBtnToday]
@@ -100,9 +100,17 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func tappedtoolBarBtnToday(sender: UIBarButtonItem) {
-        DateSelector.resignFirstResponder()
         DatePicker.date = Date()
-//        changeLabelDate(date: Date())
+        changeLabelDate(date: Date())
+    }
+    
+    func DateEvent(sender: AnyObject?) {
+        var dateSelector: UIDatePicker = sender as! UIDatePicker
+        self.changeLabelDate(date: DatePicker.date as Date)
+    }
+    
+    func changeLabelDate(date: Date) {
+        DateSelector.text = self.dateToString(date: date)
     }
     
     override func didReceiveMemoryWarning() {
@@ -169,19 +177,17 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.EndSelector.endEditing(true)
     }
     
-    func DateEvent(sender: AnyObject?) {
-        var dateSelector: UIDatePicker = sender as! UIDatePicker
-        self.DateLabel(date: DatePicker.date as NSDate)
-    }
-    
-    func DateLabel(date: NSDate) {
+    func DateLabel(date: Date) {
         DateSelector.text = self.dateToString(date: date)
     }
     
-    func dateToString(date: NSDate) -> String {
-        let formatter: DateFormatter = DateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale!
-        formatter.dateFormat = "yyyy/MM/dd"
+    func dateToString(date: Date) -> String {
+        var formatter: DateFormatter = DateFormatter()
+        let calendar: Calendar = Calendar(identifier: .gregorian)
+        let comps: DateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .weekday], from: date)
+        var weekdays: Array = [nil, "日","月","火","水","木","金","土"]
+        formatter.locale = Locale(identifier: "ja_JP")
+        formatter.dateFormat = "yyyy年MM月dd日"
         return formatter.string(from: date as Date)
     }
     
