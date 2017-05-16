@@ -21,7 +21,7 @@ class Contents: Object {
     
     static let realm = try! Realm()
     
-    dynamic private var id = 0
+    dynamic var id = 0
     override static func primaryKey() -> String? {
         return "id"
     }

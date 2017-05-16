@@ -195,6 +195,10 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         return CGRect(x: x, y: y, width: width, height: height)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func PostButton(_ sender: UIButton) {
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
