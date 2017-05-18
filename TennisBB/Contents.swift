@@ -34,4 +34,13 @@ class Contents: Object {
         }
         return ret
     }
+    
+    static func lastId() -> Int {
+        if let todo = realm.objects(Contents.self).sorted(byKeyPath: "id", ascending: false).first {
+            return todo.id + 1
+        } else {
+            return 1
+            
+        }
+    }
 }
