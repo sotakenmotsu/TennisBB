@@ -21,7 +21,7 @@ class RecruitmentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func back(segue: UIStoryboardSegue) {
+    @IBAction func back(_ segue: UIStoryboardSegue) {
     }
 
     

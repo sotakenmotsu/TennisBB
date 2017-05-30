@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import RealmSwift
 
-class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet var PlaceView: UITextField!
     
@@ -73,8 +73,8 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.EndSelector.inputView = EpickerView
         self.EndSelector.inputAccessoryView = toolbar
         
-        DateSelector.placeholder = dateToString(date: Date())
-        DateSelector.text = dateToString(date: Date())
+        DateSelector.placeholder = dateToString(Date())
+        DateSelector.text = dateToString(Date())
         self.view.addSubview(DateSelector)
         DatePicker = UIDatePicker()
         DatePicker.addTarget(self, action: #selector(DateEvent), for: UIControlEvents.valueChanged)
@@ -87,32 +87,36 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         toolBar.tintColor = UIColor.white
         toolBar.backgroundColor = UIColor.black
         
-        let toolBarBtn      = UIBarButtonItem(title: "完了", style: .bordered, target: self, action: #selector(tappedtoolBarBtn(sender:)))
-        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .bordered, target: self, action: #selector(tappedtoolBarBtnToday(sender:)))
+        let toolBarBtn      = UIBarButtonItem(title: "完了", style: .bordered, target: self, action: #selector(self.tappedtoolBarBtn(_:)))
+        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .bordered, target: self, action: #selector(tappedtoolBarBtnToday(_:)))
         
         toolBarBtn.tag = 1
         toolBar.items = [toolBarBtn, toolBarBtnToday]
         DateSelector.inputAccessoryView = toolBar
         
+        Comment.text = "コメント"
+        Comment.delegate = self
+        Comment.textColor = UIColor.lightGray
+        
         // Do any additional setup after loading the view.
     }
     
-    func tappedtoolBarBtn(sender: UIBarButtonItem) {
+    func tappedtoolBarBtn(_ sender: UIBarButtonItem) {
         DateSelector.resignFirstResponder()
     }
     
-    func tappedtoolBarBtnToday(sender: UIBarButtonItem) {
+    func tappedtoolBarBtnToday(_ sender: UIBarButtonItem) {
         DatePicker.date = Date()
-        changeLabelDate(date: Date())
+        changeLabelDate(Date())
     }
     
-    func DateEvent(sender: AnyObject?) {
+    func DateEvent(_ sender: AnyObject?) {
         var dateSelector: UIDatePicker = sender as! UIDatePicker
-        self.changeLabelDate(date: DatePicker.date as Date)
+        self.changeLabelDate(DatePicker.date as Date)
     }
     
-    func changeLabelDate(date: Date) {
-        DateSelector.text = self.dateToString(date: date)
+    func changeLabelDate(_ date: Date) {
+        DateSelector.text = self.dateToString(date)
     }
     
     override func didReceiveMemoryWarning() {
@@ -179,12 +183,12 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.EndSelector.endEditing(true)
     }
     
-    func DateLabel(date: Date) {
-        DateSelector.text = self.dateToString(date: date)
+    func DateLabel(_ date: Date) {
+        DateSelector.text = self.dateToString(date)
     }
     
-    func dateToString(date: Date) -> String {
-        var formatter: DateFormatter = DateFormatter()
+    func dateToString(_ date: Date) -> String {
+        let formatter: DateFormatter = DateFormatter()
         let calendar: Calendar = Calendar(identifier: .gregorian)
         let comps: DateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .weekday], from: date)
         var weekdays: Array = [nil, "日","月","火","水","木","金","土"]
@@ -199,6 +203,20 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func CommentDidBeginEditing(_ Comment: UITextView) {
+        if Comment.textColor == UIColor.lightGray {
+            Comment.text = nil
+            Comment.textColor = UIColor.black
+        }
+    }
+    
+    func CommentDidEndEditing(_ Comment: UITextView) {
+        if  (Comment.text?.isEmpty)! {
+            Comment.text = "コメント"
+            Comment.textColor = UIColor.lightGray
+        }
     }
     
     @IBAction func PostButton(_ sender: UIButton) {
