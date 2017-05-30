@@ -12,6 +12,8 @@ import RealmSwift
 
 class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet var PlaceView: UITextField!
+    
     @IBOutlet weak var LevelSelector: UITextField!
     var LpickerView: UIPickerView = UIPickerView()
     let Llist = ["", "ベテラン", "初心者", "まあまあ", "誰でも"]
@@ -203,14 +205,15 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         let content = Contents()
-        content.place = LevelSelector.text!
+        content.place = PlaceView.text!
         content.starttime = StartSelector.text!
         content.endtime = EndSelector.text!
         content.member = MemberSelector.text!
         content.level = LevelSelector.text!
         content.comment = Comment.text!
+        content.id = Contents.lastId()
         try! realm.write {
-            realm.add (content)
+            realm.add(content)
         }
         self.dismiss(animated: true, completion: nil)
 
