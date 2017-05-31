@@ -220,8 +220,8 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func showalert() {
-        let alert: UIAlertController = UIAlertController(title: "未記入の場所があります", message: "入力してください", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        let alert: UIAlertController = UIAlertController(title: "未記入の場所があります", message: "入力してください", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -246,14 +246,13 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
             self.showalert()
         }else if content.level == "" {
             self.showalert()
-        }else if content.comment == "" {
+        }else if content.comment == "コメント" {
             self.showalert()
         }else{
             try! realm.write {
                 realm.add(content)
             }
+            self.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
-
     }
 }
