@@ -205,18 +205,24 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         self.view.endEditing(true)
     }
     
-    func CommentDidBeginEditing(_ Comment: UITextView) {
+    func textViewDidBeginEditing(_ textView: UITextView) {
         if Comment.textColor == UIColor.lightGray {
             Comment.text = nil
             Comment.textColor = UIColor.black
         }
     }
     
-    func CommentDidEndEditing(_ Comment: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         if  (Comment.text?.isEmpty)! {
             Comment.text = "コメント"
             Comment.textColor = UIColor.lightGray
         }
+    }
+    
+    func showalert() {
+        let alert: UIAlertController = UIAlertController(title: "未記入の場所があります", message: "入力してください", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func PostButton(_ sender: UIButton) {
@@ -230,8 +236,22 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         content.level = LevelSelector.text!
         content.comment = Comment.text!
         content.id = Contents.lastId()
-        try! realm.write {
-            realm.add(content)
+        if content.place == "" {
+            self.showalert()
+        }else if content.starttime == "" {
+            self.showalert()
+        }else if content.endtime == "" {
+            self.showalert()
+        }else if content.member == "" {
+            self.showalert()
+        }else if content.level == "" {
+            self.showalert()
+        }else if content.comment == "" {
+            self.showalert()
+        }else{
+            try! realm.write {
+                realm.add(content)
+            }
         }
         self.dismiss(animated: true, completion: nil)
 
