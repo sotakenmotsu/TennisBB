@@ -7,11 +7,22 @@
 //
 
 import UIKit
+import Foundation
+import RealmSwift
 
-class RecruitmentViewController: UIViewController {
+class RecruitmentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var tableview: UITableView!
+    let realm = try! Realm()
+    var contents: Results<Contents>? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableview.dataSource = self
+        contents = realm.objects(Contents.self)
+        self.tableview.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
         
         // Do any additional setup after loading the view.
     }
@@ -23,6 +34,53 @@ class RecruitmentViewController: UIViewController {
     
     @IBAction func back(_ segue: UIStoryboardSegue) {
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+        cell.placelabel.text = contents?[indexPath.row].place
+        cell.startlabel.text = contents?[indexPath.row].starttime
+        cell.endlabel.text = contents?[indexPath.row].endtime
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contents?.count ?? 0
+    }
+    
+    func showalert(indexPath: IndexPath) {
+        let alert: UIAlertController = UIAlertController(title: "この投稿を削除します", message: "よろしいですか？", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title:"キャンセル", style: .cancel))
+        alert.addAction(UIAlertAction(title: "削除", style: .destructive, handler: { action in
+            try! self.realm.write {
+                guard let content = self.contents?[indexPath.row] else {
+                    return
+                }
+                self.realm.delete(content)
+            }
+            self.tableview.deleteRows(at: [indexPath], with: .fade) }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deletebutton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "削除") { (action, index) -> Void in self.showalert(indexPath: indexPath)
+        }
+        return [deletebutton]
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.showalert(indexPath: indexPath)
+        }
+    }
+    
+    func refreshTableView() {
+        tableview.reloadData()
+    }
+
 
     
 

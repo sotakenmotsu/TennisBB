@@ -20,6 +20,9 @@ class LookForViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         contents = realm.objects(Contents.self)
         self.tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
+        self.refreshControl = refresh
         
     }
 
@@ -48,4 +51,10 @@ class LookForViewController: UITableViewController {
         return contents?.count ?? 0
     }
     
+    func refreshTableView() {
+        sleep(1)
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+
 }
