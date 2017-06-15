@@ -15,14 +15,16 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var tableview: UITableView!
     let realm = try! Realm()
     var contents: Results<Contents>? = nil
+    var refresh: UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.dataSource = self
         contents = realm.objects(Contents.self)
         self.tableview.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
-        let refresh = UIRefreshControl()
+        self.refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
+        self.tableview.addSubview(refresh)
         
         // Do any additional setup after loading the view.
     }
@@ -78,7 +80,9 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func refreshTableView() {
+        sleep(2)
         tableview.reloadData()
+        refresh.endRefreshing()
     }
 
 
