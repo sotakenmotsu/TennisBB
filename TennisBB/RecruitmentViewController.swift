@@ -68,7 +68,8 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deletebutton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "削除") { (action, index) -> Void in self.showalert(indexPath: indexPath)
+        let deletebutton: UITableViewRowAction = UITableViewRowAction(style: .normal, title: "削除") {
+            (action, index) -> Void in self.showalert(indexPath: indexPath)
         }
         return [deletebutton]
     }
@@ -80,7 +81,7 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func refreshTableView() {
-        sleep(2)
+        sleep(1)
         tableview.reloadData()
         refresh.endRefreshing()
     }

@@ -230,6 +230,7 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         let content = Contents()
         content.place = PlaceView.text!
+        content.date = DateSelector.text!
         content.starttime = StartSelector.text!
         content.endtime = EndSelector.text!
         content.member = MemberSelector.text!

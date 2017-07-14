@@ -14,6 +14,7 @@ class LookForViewController: UITableViewController {
     
     let realm = try! Realm()
     var contents: Results<Contents>? = nil
+    var content: Contents?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,20 @@ class LookForViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contents?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        content = contents?[indexPath.row]
+        if content != nil {
+            performSegue(withIdentifier: "toLContentsView", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toLContentsView"){
+            let LC: LContentsViewController = (segue.destination as? LContentsViewController)!
+            LC.contents = content
+        }
     }
     
     func refreshTableView() {

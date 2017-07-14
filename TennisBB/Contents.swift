@@ -13,6 +13,7 @@ import RealmSwift
 class Contents: Object {
     
     dynamic var place = ""
+    dynamic var date = ""
     dynamic var starttime = ""
     dynamic var endtime = ""
     dynamic var member = ""

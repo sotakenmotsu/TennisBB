@@ -23,6 +23,9 @@
 		C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */; };
 		C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C55ABBCA1E2F7E9400D38DE1 /* icon.png */; };
 		C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */; };
+		C5D85D3B1F10C4CF003D45FD /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D85D391F10C4CF003D45FD /* HeaderView.xib */; };
+		C5D85D3D1F10E074003D45FD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3C1F10E074003D45FD /* HeaderView.swift */; };
+		C5D85D3F1F10E29D003D45FD /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */; };
 		C5DB20F61E4CA6E50072CB3B /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DB20F51E4CA6E50072CB3B /* Contents.swift */; };
 		DF9F944A53C13294FC36C793 /* Pods_TennisBBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3479508B37202A61003BC5F6 /* Pods_TennisBBTests.framework */; };
 		E43E5A889A062AE25BD3089B /* Pods_TennisBB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2ADC4B1DE07F8F1FE71A5F /* Pods_TennisBB.framework */; };
@@ -76,6 +79,9 @@
 		C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		C55ABBCA1E2F7E9400D38DE1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
 		C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RContentsViewController.swift; sourceTree = "<group>"; };
+		C5D85D391F10C4CF003D45FD /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		C5D85D3C1F10E074003D45FD /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		C5DB20F51E4CA6E50072CB3B /* Contents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,9 +156,12 @@
 				C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */,
 				C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */,
 				C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */,
+				C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */,
 				C5DB20F51E4CA6E50072CB3B /* Contents.swift */,
 				C52DA6D41EE6ACB000FF570C /* CustomCell.swift */,
+				C5D85D3C1F10E074003D45FD /* HeaderView.swift */,
 				C52DA6D51EE6ACB000FF570C /* CustomCell.xib */,
+				C5D85D391F10C4CF003D45FD /* HeaderView.xib */,
 				C55ABB9D1E264F1800D38DE1 /* Assets.xcassets */,
 				C55ABBCA1E2F7E9400D38DE1 /* icon.png */,
 				C55ABB9F1E264F1800D38DE1 /* LaunchScreen.storyboard */,
@@ -310,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D85D3B1F10C4CF003D45FD /* HeaderView.xib in Resources */,
 				C52DA6D71EE6ACB000FF570C /* CustomCell.xib in Resources */,
 				C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */,
 				C55ABBA11E264F1800D38DE1 /* LaunchScreen.storyboard in Resources */,
@@ -467,6 +477,8 @@
 				C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */,
 				C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */,
 				C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */,
+				C5D85D3D1F10E074003D45FD /* HeaderView.swift in Sources */,
+				C5D85D3F1F10E29D003D45FD /* HeaderViewController.swift in Sources */,
 				C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */,
 				C512D0B91E38B971006BF204 /* LContentsViewController.swift in Sources */,
 				C55ABBC51E264F8100D38DE1 /* RecruitmentViewController.swift in Sources */,
