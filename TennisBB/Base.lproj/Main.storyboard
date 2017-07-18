@@ -93,7 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4UA-4L-fr1"/>
                     <connections>
-                        <outlet property="tableView" destination="hsB-x6-cEw" id="JXw-My-XzW"/>
+                        <outlet property="tableView" destination="hsB-x6-cEw" id="jIn-dT-ddA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8v-dv-KAt" userLabel="First Responder" sceneMemberID="firstResponder"/>

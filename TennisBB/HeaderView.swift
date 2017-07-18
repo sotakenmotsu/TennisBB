@@ -12,6 +12,11 @@ import RealmSwift
 
 class HeaderView: UIView {
     
+    static func instantiate() -> HeaderView {
+        let view = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
+        return view
+    }
+    
     @IBOutlet var place: UILabel!
     @IBOutlet var date: UILabel!
     @IBOutlet var Stime: UILabel!
@@ -19,24 +24,6 @@ class HeaderView: UIView {
     @IBOutlet var member: UILabel!
     @IBOutlet var level: UILabel!
     @IBOutlet var comment: UILabel!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        loadNib()
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        loadNib()
-    }
-    
-    func loadNib() {
-        let view = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! UIView
-        view.frame = self.bounds
-        self.addSubview(view)
-        
-        
-    }
     
     func setContents(contents: Contents) {
         place.text = contents.place

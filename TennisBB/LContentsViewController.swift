@@ -22,7 +22,8 @@ class LContentsViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         tableView.delegate = self
         let sizewidth = UIScreen.main.bounds.size.width
-        let headerView = HeaderView(frame: CGRect(x: 0, y: 0, width: sizewidth, height: 340))
+        let headerView = HeaderView.instantiate()
+        headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
         headerView.setContents(contents: contents!)
         tableView.tableHeaderView = headerView
         
