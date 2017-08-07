@@ -11,6 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="TennisBB" customModuleProvider="target">
             <connections>
+                <outlet property="Etime" destination="uxg-gA-Fh3" id="Fin-Wt-xuX"/>
+                <outlet property="Stime" destination="Sa8-OJ-dNw" id="hcx-78-3Wf"/>
+                <outlet property="comment" destination="qQX-PA-oOz" id="P9K-ld-QjE"/>
+                <outlet property="date" destination="gFW-qs-ENx" id="47e-uO-LvX"/>
+                <outlet property="level" destination="YUS-PA-n7A" id="Ntg-Y8-s5w"/>
+                <outlet property="member" destination="7eZ-WZ-zjf" id="qPS-zG-SgH"/>
+                <outlet property="place" destination="haY-Mb-qE8" id="ZGD-Jh-vmP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
