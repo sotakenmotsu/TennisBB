@@ -36,6 +36,8 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBOutlet var Comment: UITextView!
     
+    @IBOutlet var postbutton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +99,9 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         Comment.text = "コメント"
         Comment.delegate = self
         Comment.textColor = UIColor.lightGray
+        
+        self.view.backgroundColor = ColorManager.maincolor
+        postbutton.backgroundColor = ColorManager.buttoncolor
         
         // Do any additional setup after loading the view.
     }

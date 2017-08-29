@@ -26,6 +26,7 @@ class LContentsViewController: UIViewController, UITableViewDelegate, UITableVie
         headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
         headerView.setContents(contents: contents!)
         tableView.tableHeaderView = headerView
+        self.view.backgroundColor = ColorManager.maincolor
         
         
         // Do any additional setup after loading the view.

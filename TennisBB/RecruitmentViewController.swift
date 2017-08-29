@@ -16,6 +16,8 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     let realm = try! Realm()
     var contents: Results<Contents>? = nil
     var refresh: UIRefreshControl!
+    @IBOutlet var newpostbutton: UIButton!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,8 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         self.refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
         self.tableview.addSubview(refresh)
-        
+        self.view.backgroundColor = ColorManager.maincolor
+        newpostbutton.backgroundColor = ColorManager.buttoncolor
         // Do any additional setup after loading the view.
     }
 
@@ -46,6 +49,7 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         cell.placelabel.text = contents?[indexPath.row].place
         cell.startlabel.text = contents?[indexPath.row].starttime
         cell.endlabel.text = contents?[indexPath.row].endtime
+        cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
     
@@ -84,6 +88,10 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         sleep(1)
         tableview.reloadData()
         refresh.endRefreshing()
+    }
+    
+    @IBAction func postbutton() {
+        self.view.backgroundColor = ColorManager.buttoncolor
     }
 
 

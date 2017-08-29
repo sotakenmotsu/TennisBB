@@ -12,6 +12,8 @@ class FriendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = ColorManager.maincolor
 
         // Do any additional setup after loading the view.
     }

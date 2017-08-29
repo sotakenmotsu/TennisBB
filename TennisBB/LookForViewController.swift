@@ -24,6 +24,7 @@ class LookForViewController: UITableViewController {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
         self.refreshControl = refresh
+        self.view.backgroundColor = ColorManager.maincolor
         
     }
 
@@ -45,6 +46,7 @@ class LookForViewController: UITableViewController {
         cell.placelabel.text = contents?[indexPath.row].place
         cell.startlabel.text = contents?[indexPath.row].starttime
         cell.endlabel.text = contents?[indexPath.row].endtime
+        cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
     

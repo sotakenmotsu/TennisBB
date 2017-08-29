@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mP3-ra-Dw4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mP3-ra-Dw4">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,11 +24,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHc-39-PBV">
                                 <rect key="frame" x="47" y="28" width="226" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="新規募集">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="新規募集"/>
                                 <connections>
                                     <segue destination="cKl-Dk-mdg" kind="modal" id="0ux-4b-MrM"/>
                                 </connections>
@@ -49,11 +46,11 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="zZQ-CU-gJ2"/>
                     <navigationItem key="navigationItem" title="back" id="l2C-Gx-SAp"/>
                     <connections>
+                        <outlet property="newpostbutton" destination="OHc-39-PBV" id="A9h-ML-4Rr"/>
                         <outlet property="tableview" destination="7Vv-v0-l4w" id="Afg-e5-Qkh"/>
                     </connections>
                 </viewController>
@@ -209,11 +206,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qeq-a0-qOA">
                                 <rect key="frame" x="58" y="459" width="193" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="投稿">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="投稿"/>
                                 <connections>
                                     <action selector="PostButton:" destination="cKl-Dk-mdg" eventType="touchUpInside" id="eTo-Al-Et1"/>
                                 </connections>
@@ -240,7 +234,6 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="O4D-0x-zmP"/>
                     <connections>
@@ -251,6 +244,7 @@
                         <outlet property="MemberSelector" destination="7Hv-uH-gPQ" id="zaa-hU-21s"/>
                         <outlet property="PlaceView" destination="ZIr-Jm-FRV" id="MuT-e6-ZDm"/>
                         <outlet property="StartSelector" destination="qpo-y1-2FL" id="dF3-GB-m9E"/>
+                        <outlet property="postbutton" destination="Qeq-a0-qOA" id="wcJ-nv-hOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTI-qs-FQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,15 +262,6 @@
                     <view key="view" contentMode="scaleToFill" id="ye3-Xf-5Eb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nH6-Ww-8lX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Title" id="c8c-wI-N4X"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="LWb-8i-YWZ"/>
