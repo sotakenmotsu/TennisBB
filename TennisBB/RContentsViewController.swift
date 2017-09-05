@@ -102,6 +102,7 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         self.view.backgroundColor = ColorManager.maincolor
         postbutton.backgroundColor = ColorManager.buttoncolor
+        postbutton.setTitleColor(.white, for: .normal)
         
         // Do any additional setup after loading the view.
     }
@@ -260,5 +261,9 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
             }
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func backbutton(_ segue: UIStoryboard) {
+        self.view.backgroundColor = ColorManager.buttoncolor
     }
 }

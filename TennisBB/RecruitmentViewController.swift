@@ -29,6 +29,9 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableview.addSubview(refresh)
         self.view.backgroundColor = ColorManager.maincolor
         newpostbutton.backgroundColor = ColorManager.buttoncolor
+        newpostbutton.setTitleColor(.white, for: .normal)
+        tableview.tableFooterView = UIView(frame: .zero)
+        self.tabBarController?.tabBar.barTintColor = ColorManager.barcolor
         // Do any additional setup after loading the view.
     }
 

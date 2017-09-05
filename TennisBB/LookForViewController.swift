@@ -25,7 +25,9 @@ class LookForViewController: UITableViewController {
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
         self.refreshControl = refresh
         self.view.backgroundColor = ColorManager.maincolor
-        
+        tableView.tableFooterView = UIView(frame: .zero)
+        navigationController?.navigationBar.barTintColor = ColorManager.barcolor
+        navigationController?.navigationBar.tintColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {

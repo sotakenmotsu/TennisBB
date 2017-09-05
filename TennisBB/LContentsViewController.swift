@@ -27,7 +27,7 @@ class LContentsViewController: UIViewController, UITableViewDelegate, UITableVie
         headerView.setContents(contents: contents!)
         tableView.tableHeaderView = headerView
         self.view.backgroundColor = ColorManager.maincolor
-        
+        tableView.tableFooterView = UIView(frame: .zero)
         
         // Do any additional setup after loading the view.
     }

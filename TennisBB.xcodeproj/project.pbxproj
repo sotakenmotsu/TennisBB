@@ -12,6 +12,11 @@
 		C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52DA6D41EE6ACB000FF570C /* CustomCell.swift */; };
 		C52DA6D71EE6ACB000FF570C /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52DA6D51EE6ACB000FF570C /* CustomCell.xib */; };
 		C536A1571F557506003D6786 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536A1561F557506003D6786 /* ColorManager.swift */; };
+		C536A1591F569A34003D6786 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536A1581F569A34003D6786 /* EditViewController.swift */; };
+		C536A1751F5EACED003D6786 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1711F5EACED003D6786 /* friends.png */; };
+		C536A1761F5EACED003D6786 /* join.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1721F5EACED003D6786 /* join.png */; };
+		C536A1771F5EACED003D6786 /* recruit.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1731F5EACED003D6786 /* recruit.png */; };
+		C536A1781F5EACED003D6786 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1741F5EACED003D6786 /* settings.png */; };
 		C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABB961E264F1800D38DE1 /* AppDelegate.swift */; };
 		C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABB981E264F1800D38DE1 /* LookForViewController.swift */; };
 		C55ABB9C1E264F1800D38DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55ABB9A1E264F1800D38DE1 /* Main.storyboard */; };
@@ -63,6 +68,11 @@
 		C52DA6D41EE6ACB000FF570C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52DA6D51EE6ACB000FF570C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		C536A1561F557506003D6786 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		C536A1581F569A34003D6786 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		C536A1711F5EACED003D6786 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
+		C536A1721F5EACED003D6786 /* join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = join.png; sourceTree = "<group>"; };
+		C536A1731F5EACED003D6786 /* recruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recruit.png; sourceTree = "<group>"; };
+		C536A1741F5EACED003D6786 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		C55ABB931E264F1800D38DE1 /* TennisBB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisBB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55ABB961E264F1800D38DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C55ABB981E264F1800D38DE1 /* LookForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +135,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C536A1701F5EACED003D6786 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				C536A1711F5EACED003D6786 /* friends.png */,
+				C536A1721F5EACED003D6786 /* join.png */,
+				C536A1731F5EACED003D6786 /* recruit.png */,
+				C536A1741F5EACED003D6786 /* settings.png */,
+			);
+			name = icons;
+			path = barbuttonicon/icons;
+			sourceTree = SOURCE_ROOT;
+		};
 		C55ABB8A1E264F1700D38DE1 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +176,7 @@
 				C55ABB9A1E264F1800D38DE1 /* Main.storyboard */,
 				C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */,
 				C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */,
+				C536A1581F569A34003D6786 /* EditViewController.swift */,
 				C55ABB981E264F1800D38DE1 /* LookForViewController.swift */,
 				C512D0B81E38B971006BF204 /* LContentsViewController.swift */,
 				C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */,
@@ -169,6 +192,7 @@
 				C55ABBCA1E2F7E9400D38DE1 /* icon.png */,
 				C55ABB9F1E264F1800D38DE1 /* LaunchScreen.storyboard */,
 				C55ABBA21E264F1800D38DE1 /* Info.plist */,
+				C536A1701F5EACED003D6786 /* icons */,
 			);
 			path = TennisBB;
 			sourceTree = "<group>";
@@ -322,9 +346,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C536A1751F5EACED003D6786 /* friends.png in Resources */,
 				C5D85D3B1F10C4CF003D45FD /* HeaderView.xib in Resources */,
 				C52DA6D71EE6ACB000FF570C /* CustomCell.xib in Resources */,
+				C536A1761F5EACED003D6786 /* join.png in Resources */,
 				C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */,
+				C536A1771F5EACED003D6786 /* recruit.png in Resources */,
+				C536A1781F5EACED003D6786 /* settings.png in Resources */,
 				C55ABBA11E264F1800D38DE1 /* LaunchScreen.storyboard in Resources */,
 				C55ABB9E1E264F1800D38DE1 /* Assets.xcassets in Resources */,
 				C55ABB9C1E264F1800D38DE1 /* Main.storyboard in Resources */,
@@ -475,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C536A1591F569A34003D6786 /* EditViewController.swift in Sources */,
 				C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */,
 				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
 				C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */,
