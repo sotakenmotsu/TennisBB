@@ -12,7 +12,7 @@ import RealmSwift
 
 class LContentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     var contents: Contents?
     
     
