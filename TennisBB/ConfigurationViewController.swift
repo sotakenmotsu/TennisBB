@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ConfigurationViewController: UIViewController {
 
@@ -14,6 +16,7 @@ class ConfigurationViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = ColorManager.maincolor
+        FIRAuth.auth
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +25,7 @@ class ConfigurationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*
