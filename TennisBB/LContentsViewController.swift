@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-import RealmSwift
+
 
 class LContentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

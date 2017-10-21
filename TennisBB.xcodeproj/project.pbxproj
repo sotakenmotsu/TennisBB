@@ -17,6 +17,8 @@
 		C536A1761F5EACED003D6786 /* join.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1721F5EACED003D6786 /* join.png */; };
 		C536A1771F5EACED003D6786 /* recruit.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1731F5EACED003D6786 /* recruit.png */; };
 		C536A1781F5EACED003D6786 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1741F5EACED003D6786 /* settings.png */; };
+		C54463711F9B059800EE18DD /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54463701F9B059800EE18DD /* SigninViewController.swift */; };
+		C54463731F9B05B500EE18DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54463721F9B05B500EE18DD /* LoginViewController.swift */; };
 		C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABB961E264F1800D38DE1 /* AppDelegate.swift */; };
 		C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABB981E264F1800D38DE1 /* LookForViewController.swift */; };
 		C55ABB9C1E264F1800D38DE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55ABB9A1E264F1800D38DE1 /* Main.storyboard */; };
@@ -74,6 +76,8 @@
 		C536A1721F5EACED003D6786 /* join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = join.png; sourceTree = "<group>"; };
 		C536A1731F5EACED003D6786 /* recruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recruit.png; sourceTree = "<group>"; };
 		C536A1741F5EACED003D6786 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		C54463701F9B059800EE18DD /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		C54463721F9B05B500EE18DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C55ABB931E264F1800D38DE1 /* TennisBB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisBB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55ABB961E264F1800D38DE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C55ABB981E264F1800D38DE1 /* LookForViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookForViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 			children = (
 				C55ABB961E264F1800D38DE1 /* AppDelegate.swift */,
 				C55ABB9A1E264F1800D38DE1 /* Main.storyboard */,
+				C54463701F9B059800EE18DD /* SigninViewController.swift */,
+				C54463721F9B05B500EE18DD /* LoginViewController.swift */,
 				C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */,
 				C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */,
 				C536A1581F569A34003D6786 /* EditViewController.swift */,
@@ -553,8 +559,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C54463711F9B059800EE18DD /* SigninViewController.swift in Sources */,
 				C536A1591F569A34003D6786 /* EditViewController.swift in Sources */,
 				C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */,
+				C54463731F9B05B500EE18DD /* LoginViewController.swift in Sources */,
 				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
 				C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */,
 				C536A1571F557506003D6786 /* ColorManager.swift in Sources */,

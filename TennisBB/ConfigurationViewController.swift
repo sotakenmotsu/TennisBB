@@ -16,7 +16,6 @@ class ConfigurationViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = ColorManager.maincolor
-        FIRAuth.auth
 
         // Do any additional setup after loading the view.
     }

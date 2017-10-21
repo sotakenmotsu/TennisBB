@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-import RealmSwift
+
 
 class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     
