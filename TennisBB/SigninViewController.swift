@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SigninViewController: UIViewController {
+class SigninViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
