@@ -42,9 +42,9 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
         transitionToLogin()
     }
     
-    @IBAction func willLoginWithFacebook() {
-        self.loginWithFacebook()
-    }
+//    @IBAction func willLoginWithFacebook() {
+//        self.loginWithFacebook()
+//    }
     
     func transitionToLogin() {
         self.performSegue(withIdentifier: "toLogin", sender: self)
@@ -62,7 +62,7 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
     func signup() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        FIRAuth.auth()?.createUser(withemail: email, password: password, completion: { (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 self.transitionToLogin()
             } else {

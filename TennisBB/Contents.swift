@@ -9,38 +9,39 @@
 import UIKit
 import Foundation
 
-class Contents: Object {
-    
-    dynamic var place = ""
-    dynamic var date = ""
-    dynamic var starttime = ""
-    dynamic var endtime = ""
-    dynamic var member = ""
-    dynamic var level = ""
-    dynamic var comment = ""
-    
-    static let realm = try! Realm()
-    
-    dynamic var id = 0
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    static func loadAll() -> [Contents] {
-        let contents = realm.objects(Contents.self)
-        var ret: [Contents] = []
-        for content in contents {
-            ret.append(content)
-        }
-        return ret
-    }
-    
-    static func lastId() -> Int {
-        if let todo = realm.objects(Contents.self).sorted(byKeyPath: "id", ascending: false).first {
-            return todo.id + 1
-        } else {
-            return 1
-            
-        }
-    }
-}
+//class Contents: Object {
+//    
+//    dynamic var place = ""
+//    dynamic var date = ""
+//    dynamic var starttime = ""
+//    dynamic var endtime = ""
+//    dynamic var member = ""
+//    dynamic var level = ""
+//    dynamic var comment = ""
+//    
+//    static let realm = try! Realm()
+//    
+//    dynamic var id = 0
+//    override static func primaryKey() -> String? {
+//        return "id"
+//    }
+//    
+//    static func loadAll() -> [Contents] {
+//        let contents = realm.objects(Contents.self)
+//        var ret: [Contents] = []
+//        for content in contents {
+//            ret.append(content)
+//        }
+//        return ret
+//    }
+//    
+//    static func lastId() -> Int {
+//        if let todo = realm.objects(Contents.self).sorted(byKeyPath: "id", ascending: false).first {
+//            return todo.id + 1
+//        } else {
+//            return 1
+//            
+//        }
+//    }
+//}
+

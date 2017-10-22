@@ -450,7 +450,7 @@
         <!--Login View Controller-->
         <scene sceneID="7KY-gw-R1H">
             <objects>
-                <viewController id="qwS-Vg-Saw" customClass="LoginViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qwS-Vg-Saw" customClass="LoginViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UOv-I4-Gtc"/>
                         <viewControllerLayoutGuide type="bottom" id="yu8-Ou-P1c"/>
@@ -473,6 +473,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pF-i7-gng">
+                                <rect key="frame" x="126" y="313" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログイン"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -484,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pno-rL-Wza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2764" y="779"/>
+            <point key="canvasLocation" x="-2765.625" y="778.52112676056333"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sy5-Ag-Gnf">
@@ -535,14 +540,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5Q-v2-WhY">
+                                <rect key="frame" x="117" y="269" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="サインイン"/>
+                                <connections>
+                                    <action selector="willSignup" destination="Ri3-eH-nin" eventType="touchUpInside" id="UHk-Cf-fdo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FTL-GB-I2m"/>
+                    <navigationItem key="navigationItem" id="FTL-GB-I2m">
+                        <barButtonItem key="rightBarButtonItem" title="ログイン" id="d8s-FQ-IQy">
+                            <connections>
+                                <action selector="willTransitionToLogin" destination="Ri3-eH-nin" id="8iB-Du-LJ7"/>
+                                <segue destination="qwS-Vg-Saw" kind="show" identifier="toLogin" id="8Ya-Ks-UJO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="nBY-dN-STs" id="zrI-qC-e11"/>
                         <outlet property="passwordTextField" destination="L0F-OM-aBc" id="LXy-qJ-Ox4"/>
-                        <segue destination="qwS-Vg-Saw" kind="show" id="J9q-F1-ya5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXv-ug-Xhc" userLabel="First Responder" sceneMemberID="firstResponder"/>

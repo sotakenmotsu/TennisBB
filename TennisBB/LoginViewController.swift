@@ -49,7 +49,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     func login() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 if let loginUser = user {
                     self .transitionToView()
