@@ -20,7 +20,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
-
+        self.view.backgroundColor = ColorManager.maincolor
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +31,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if self.checkUserVerify() {
+            self.transitionToView()
+        }
     }
     
     @IBAction func didRegisterUser() {
@@ -52,7 +56,12 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 if let loginUser = user {
-                    self .transitionToView()
+                    if self.checkUserValidate(user: loginUser) {
+                        print(Auth.auth().currentUser)
+                        self.transitionToView()
+                    } else {
+                        self.presentValidatealert()
+                    }
                 }
             } else {
                 print("error...\(error?.localizedDescription)")
@@ -60,6 +69,20 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         })
     }
     
+    func checkUserValidate(user: User) -> Bool {
+        return user.isEmailVerified
+    }
+    
+    func presentValidatealert() {
+        let alert = UIAlertController(title:"メール認証", message: "メール認証をおこなってください", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func checkUserVerify() -> Bool {
+        guard let user = Auth.auth().currentUser else { return false }
+        return user.isEmailVerified
+    }
     
     
     /*
