@@ -13,6 +13,7 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    private var toolbar: UIToolbar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
