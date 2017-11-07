@@ -35,6 +35,7 @@
 		C5D85D3D1F10E074003D45FD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3C1F10E074003D45FD /* HeaderView.swift */; };
 		C5D85D3F1F10E29D003D45FD /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */; };
 		C5DB20F61E4CA6E50072CB3B /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DB20F51E4CA6E50072CB3B /* Content.swift */; };
+		C5F9D2231FB1BF6A006E5D8E /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F9D2221FB1BF6A006E5D8E /* UserNameViewController.swift */; };
 		C5FCFB2F1F961ABA0083A116 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FCFB2E1F961ABA0083A116 /* GoogleService-Info.plist */; };
 		DF9F944A53C13294FC36C793 /* Pods_TennisBBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3479508B37202A61003BC5F6 /* Pods_TennisBBTests.framework */; };
 		E43E5A889A062AE25BD3089B /* Pods_TennisBB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2ADC4B1DE07F8F1FE71A5F /* Pods_TennisBB.framework */; };
@@ -100,6 +101,7 @@
 		C5D85D3C1F10E074003D45FD /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		C5DB20F51E4CA6E50072CB3B /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		C5F9D2221FB1BF6A006E5D8E /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
 		C5FCFB2E1F961ABA0083A116 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 				C55ABB9A1E264F1800D38DE1 /* Main.storyboard */,
 				C54463701F9B059800EE18DD /* SigninViewController.swift */,
 				C54463721F9B05B500EE18DD /* LoginViewController.swift */,
+				C5F9D2221FB1BF6A006E5D8E /* UserNameViewController.swift */,
 				C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */,
 				C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */,
 				C536A1581F569A34003D6786 /* EditViewController.swift */,
@@ -566,6 +569,7 @@
 				C54463731F9B05B500EE18DD /* LoginViewController.swift in Sources */,
 				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
 				C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */,
+				C5F9D2231FB1BF6A006E5D8E /* UserNameViewController.swift in Sources */,
 				C536A1571F557506003D6786 /* ColorManager.swift in Sources */,
 				C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */,
 				C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */,

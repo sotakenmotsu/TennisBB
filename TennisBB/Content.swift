@@ -11,6 +11,7 @@ import Foundation
 
 class Content {
     
+    dynamic var user = ""
     dynamic var place = ""
     dynamic var date = ""
     dynamic var starttime = ""
