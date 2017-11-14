@@ -234,15 +234,15 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBAction func PostButton(_ sender: UIButton) {
 //        let realm = try! Realm()
 //        print(Realm.Configuration.defaultConfiguration.fileURL!)
-//        let content = Contents()
-//        content.place = PlaceView.text!
-//        content.date = DateSelector.text!
-//        content.starttime = StartSelector.text!
-//        content.endtime = EndSelector.text!
-//        content.member = MemberSelector.text!
-//        content.level = LevelSelector.text!
-//        content.comment = Comment.text!
-//        content.id = Contents.lastId()
+        let content = Content()
+        content.place = PlaceView.text!
+        content.date = DateSelector.text!
+        content.starttime = StartSelector.text!
+        content.endtime = EndSelector.text!
+        content.member = MemberSelector.text!
+        content.level = LevelSelector.text!
+        content.comment = Comment.text!
+//        content.id = Content.lastId()
         if content.place == "" {
             self.showalert()
         }else if content.starttime == "" {
@@ -256,9 +256,6 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }else if content.comment == "コメント" {
             self.showalert()
         }else{
-            try! realm.write {
-                realm.add(content)
-            }
             self.dismiss(animated: true, completion: nil)
         }
     }

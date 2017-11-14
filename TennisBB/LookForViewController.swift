@@ -12,8 +12,8 @@ import Foundation
 class LookForViewController: UITableViewController {
     
 //    let realm = try! Realm()
-//    var contents: Results<Contents>? = nil
-//    var content: Contents?
+    var contents = [Content]()
+    var content: Content?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,28 +44,28 @@ class LookForViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-//        cell.placelabel.text = contents?[indexPath.row].place
-//        cell.startlabel.text = contents?[indexPath.row].starttime
-//        cell.endlabel.text = contents?[indexPath.row].endtime
+        cell.placelabel.text = contents[indexPath.row].place
+        cell.startlabel.text = contents[indexPath.row].starttime
+        cell.endlabel.text = contents[indexPath.row].endtime
         cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return contents?.count ?? 0
+        return contents.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        content = contents?[indexPath.row]
-//        if content != nil {
+        content = contents[indexPath.row]
+        if content != nil {
             performSegue(withIdentifier: "toLContentsView", sender: nil)
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toLContentsView"){
-//            let LC: LContentsViewController = (segue.destination as? LContentsViewController)!
-//            LC.contents = content
+            let LC: LContentsViewController = (segue.destination as? LContentsViewController)!
+            LC.contents = contents
         }
     }
     

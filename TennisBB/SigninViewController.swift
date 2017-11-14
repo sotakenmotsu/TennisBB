@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class SigninViewController: UIViewController,UITextFieldDelegate {
     
@@ -77,6 +78,9 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
                 print("\(error?.localizedDescription)")
             }
         })
+        if FirebaseApp.app() == nil {
+            FirebaseApp.configure()
+        }
     }
     
     @IBAction func logOut() {

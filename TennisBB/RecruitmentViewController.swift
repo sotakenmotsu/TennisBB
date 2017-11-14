@@ -14,6 +14,8 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var tableview: UITableView!
 //    let realm = try! Realm()
 //    var contents: Results<Contents>? = nil
+    var content: Content?
+    var contents = [Content]()
     var refresh: UIRefreshControl!
     @IBOutlet var newpostbutton: UIButton!
 
@@ -48,27 +50,22 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-//        cell.placelabel.text = contents?[indexPath.row].place
-//        cell.startlabel.text = contents?[indexPath.row].starttime
-//        cell.endlabel.text = contents?[indexPath.row].endtime
+        cell.placelabel.text = contents[indexPath.row].place
+        cell.startlabel.text = contents[indexPath.row].starttime
+        cell.endlabel.text = contents[indexPath.row].endtime
         cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return contents?.count ?? 0
+        return contents.count ?? 0
     }
     
     func showalert(indexPath: IndexPath) {
         let alert: UIAlertController = UIAlertController(title: "この投稿を削除します", message: "よろしいですか？", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title:"キャンセル", style: .cancel))
         alert.addAction(UIAlertAction(title: "削除", style: .destructive, handler: { action in
-//            try! self.realm.write {
-//                guard let content = self.contents?[indexPath.row] else {
-//                    return
-//                }
-//                self.realm.delete(content)
-//            }
+
             self.tableview.deleteRows(at: [indexPath], with: .fade) }))
         self.present(alert, animated: true, completion: nil)
     }

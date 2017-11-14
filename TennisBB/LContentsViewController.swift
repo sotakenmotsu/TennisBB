@@ -13,7 +13,8 @@ import Foundation
 class LContentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
-//    var contents: Contents?
+    var content: Content?
+    var contents = [Content]()
 
 
     override func viewDidLoad() {
@@ -22,10 +23,10 @@ class LContentsViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         tableView.delegate = self
         let sizewidth = UIScreen.main.bounds.size.width
-//        let headerView = HeaderView.instantiate()
-//        headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
-//        headerView.setContents(contents: contents!)
-//        tableView.tableHeaderView = headerView
+        let headerView = HeaderView.instantiate()
+        headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
+        headerView.setContents(contents: content!)
+        tableView.tableHeaderView = headerView
         self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
 
@@ -38,7 +39,7 @@ class LContentsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        var Content = segue.destination as! HeaderView
+        var Content = segue.destination as! HeaderView
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
