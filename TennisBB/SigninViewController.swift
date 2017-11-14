@@ -79,7 +79,7 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
             }
         })
         if FirebaseApp.app() == nil {
-            FirebaseApp.configure()
+            FirebaseApp.configure()　　<-koko
         }
     }
     
