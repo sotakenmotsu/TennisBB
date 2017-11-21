@@ -14,31 +14,44 @@ class UserNameViewController: UIViewController {
 
     @IBOutlet var usernameTextField: UITextField!
     var database: Firestore!
+    var ref: DocumentReference? = nil
+    var contents = [Content]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         database = Firestore.firestore()
-        self.setData()
+        self.createDocument()
 
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.  sotakenmotsu@gmail.com
     }
-    
-    func setData() {
-        database.collection("Users").document("UserName").setData(["Username": "ハンバーグ"]) { err in
+    func createDocument() {
+        ref = database.collection("Users").addDocument(data: [
+            "name":"owner"
+        ]) { err in
             if let err = err {
-                print("Error writing document: \(err)")
+                print("Error adding document: \(err)")
             } else {
-                print("Document successfully written!")
+                print("Document added with ID: \(self.ref!.documentID)")
             }
         }
     }
+    
+//    func setData() {
+//        database.collection("Users").document("UserName").setData(["Username": "ハンバーグ"]) { err in
+//            if let err = err {
+//                print("Error writing document: \(err)")
+//            } else {
+//                print("Document successfully written!")
+//            }
+//        }
+//    }
     
 
     /*

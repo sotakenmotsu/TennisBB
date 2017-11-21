@@ -78,9 +78,6 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
                 print("\(error?.localizedDescription)")
             }
         })
-        if FirebaseApp.app() == nil {
-            FirebaseApp.configure()　　<-koko
-        }
     }
     
     @IBAction func logOut() {
