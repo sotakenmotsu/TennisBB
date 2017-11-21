@@ -42,7 +42,7 @@ class UserNameViewController: UIViewController {
             }
         }
     }
-    
+    //
 //    func setData() {
 //        database.collection("Users").document("UserName").setData(["Username": "ハンバーグ"]) { err in
 //            if let err = err {
