@@ -16,13 +16,13 @@ class UserNameViewController: UIViewController {
     var database: Firestore!
     var ref: DocumentReference? = nil
     var contents = [Content]()
+    var username: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        FirebaseApp.configure()
         database = Firestore.firestore()
-        self.createDocument()
 
         // Do any additional setup after loading the view.
     }
@@ -33,7 +33,7 @@ class UserNameViewController: UIViewController {
     }
     func createDocument() {
         ref = database.collection("Users").addDocument(data: [
-            "name":"owner"
+            "username": username
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -42,16 +42,11 @@ class UserNameViewController: UIViewController {
             }
         }
     }
-    //
-//    func setData() {
-//        database.collection("Users").document("UserName").setData(["Username": "ハンバーグ"]) { err in
-//            if let err = err {
-//                print("Error writing document: \(err)")
-//            } else {
-//                print("Document successfully written!")
-//            }
-//        }
-//    }
+    
+    @IBAction func namedButton() {
+        username = usernameTextField.text
+        self.createDocument()
+    }
     
 
     /*

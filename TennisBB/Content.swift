@@ -11,15 +11,25 @@ import Foundation
 
 class Content {
     
-    dynamic var user = ""
-    dynamic var place = ""
-    dynamic var date = ""
-    dynamic var starttime = ""
-    dynamic var endtime = ""
-    dynamic var member = ""
-    dynamic var level = ""
-    dynamic var comment = ""
+     var place = ""
+     var date = ""
+     var starttime = ""
+     var endtime = ""
+     var member = ""
+     var level = ""
+     var comment = ""
     
-    dynamic var id = 0
+     var id = 0
+    
+    init(dic: [String: Any]) {
+        
+        self.comment = dic["a"] as! String
+    }
+    
+    func toDictionary() -> [String: Any] {
+        
+        let dic: [String: Any] = ["comment": self.comment]
+        return dic
+    }
     
 }

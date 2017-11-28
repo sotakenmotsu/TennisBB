@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 
 class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
@@ -16,19 +17,19 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBOutlet weak var LevelSelector: UITextField!
     var LpickerView: UIPickerView = UIPickerView()
-    let Llist = ["", "ベテラン", "初心者", "まあまあ", "誰でも"]
+    var level: Int = 0
     
     @IBOutlet weak var MemberSelector: UITextField!
     var MpickerView: UIPickerView = UIPickerView()
-    let Mlist = ["", "1人", "2人", "3人", "4人", "5人", "6人", "7人", "8人", "9人", "10人",]
+    var member: Int = 0
     
     @IBOutlet weak var StartSelector: UITextField!
     var SpickerView: UIPickerView = UIPickerView()
-    let Slist = ["", "７時", "９時", "１１時", "１３時", "１５時", "１７時", "１９時"]
+    var start: Int = 0
     
     @IBOutlet weak var EndSelector: UITextField!
     var EpickerView: UIPickerView = UIPickerView()
-    let Elist = ["", "７時", "９時", "１１時", "１３時", "１５時", "１７時", "１９時"]
+    var end: Int = 0
     
     @IBOutlet weak var DateSelector: UITextField!
     var DatePicker: UIDatePicker = UIDatePicker()
@@ -38,6 +39,8 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBOutlet var postbutton: UIButton!
     
+    var database: Firestore!
+    var ref: DocumentReference? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,37 +139,39 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == LpickerView {
-            return Llist.count
+            return 5
         }else if pickerView == MpickerView {
-            return Mlist.count
+            return 30
         }else if pickerView == SpickerView {
-            return Slist.count
+            return 12
         }else{
-            return Elist.count
+            return 12
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == LpickerView {
-            return Llist[row]
+            return "Lv.\(row)"
         }else if pickerView == MpickerView{
-            return Mlist[row]
+            return "\(row)人"
         }else if pickerView == SpickerView{
-            return Slist[row]
+            return "\(row+8)"
         }else{
-            return Elist[row]
+            return "\(row+8)"
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == LpickerView {
-            self.LevelSelector.text = Llist[row]
+            self.LevelSelector.text = "Lv.\(row)"
+            self.level = row
         }else if pickerView == MpickerView {
-            self.MemberSelector.text = Mlist[row]
+            self.MemberSelector.text = "\(row)人"
+            self.member = row
         }else if pickerView == SpickerView {
-            self.StartSelector.text = Slist[row]
+            self.StartSelector.text = "\(row+8)時"
         }else{
-            self.EndSelector.text = Elist[row]
+            self.EndSelector.text = "\(row+8)時"
         }
     }
     
@@ -234,14 +239,9 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBAction func PostButton(_ sender: UIButton) {
 //        let realm = try! Realm()
 //        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        let content = Content()
-        content.place = PlaceView.text!
-        content.date = DateSelector.text!
-        content.starttime = StartSelector.text!
-        content.endtime = EndSelector.text!
-        content.member = MemberSelector.text!
-        content.level = LevelSelector.text!
-        content.comment = Comment.text!
+        
+        
+        
 //        content.id = Content.lastId()
         if content.place == "" {
             self.showalert()

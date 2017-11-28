@@ -479,7 +479,6 @@
                                 <state key="normal" title="ログイン"/>
                                 <connections>
                                     <action selector="didRegisterUser" destination="qwS-Vg-Saw" eventType="touchUpInside" id="D96-mj-88F"/>
-                                    <segue destination="DiW-Pf-wAX" kind="modal" identifier="toVC" id="gJT-80-IgR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PASS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcl-7G-rJb">
@@ -503,6 +502,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="cQe-ZO-lLB" id="meq-ix-f15"/>
                         <outlet property="passwordTextField" destination="2J4-ax-xXZ" id="ARO-dL-bjp"/>
+                        <segue destination="mP3-ra-Dw4" kind="modal" identifier="toVC" id="f94-VR-3tZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pno-rL-Wza" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,6 +653,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsd-oC-Q6S">
+                                <rect key="frame" x="104" y="269" width="181" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="namedButton" destination="DiW-Pf-wAX" eventType="touchUpInside" id="75c-lB-vte"/>
+                                    <segue destination="mP3-ra-Dw4" kind="modal" id="lWM-ab-qFR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -706,6 +715,6 @@
         <image name="settings.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gJT-80-IgR"/>
+        <segue reference="f94-VR-3tZ"/>
     </inferredMetricsTieBreakers>
 </document>

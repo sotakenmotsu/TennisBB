@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE31DFA7371E94DE45BBB983 /* Pods_TennisBBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38048A9D8BFD6BF55072BC65 /* Pods_TennisBBUITests.framework */; };
 		C512D0B91E38B971006BF204 /* LContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512D0B81E38B971006BF204 /* LContentsViewController.swift */; };
+		C51C43781FCD70A600486D2F /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C43771FCD70A600486D2F /* Board.swift */; };
 		C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52DA6D41EE6ACB000FF570C /* CustomCell.swift */; };
 		C52DA6D71EE6ACB000FF570C /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52DA6D51EE6ACB000FF570C /* CustomCell.xib */; };
 		C536A1571F557506003D6786 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536A1561F557506003D6786 /* ColorManager.swift */; };
@@ -69,6 +70,7 @@
 		A0CF9EFF539D25939800894F /* Pods-TennisBB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBB.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBB/Pods-TennisBB.release.xcconfig"; sourceTree = "<group>"; };
 		A7AF2C9F48118799F0130C79 /* Pods-TennisBBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBBUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBBUITests/Pods-TennisBBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C512D0B81E38B971006BF204 /* LContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LContentsViewController.swift; sourceTree = "<group>"; };
+		C51C43771FCD70A600486D2F /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		C52DA6D41EE6ACB000FF570C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52DA6D51EE6ACB000FF570C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		C536A1561F557506003D6786 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */,
 				C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */,
 				C5DB20F51E4CA6E50072CB3B /* Content.swift */,
+				C51C43771FCD70A600486D2F /* Board.swift */,
 				C52DA6D41EE6ACB000FF570C /* CustomCell.swift */,
 				C5D85D3C1F10E074003D45FD /* HeaderView.swift */,
 				C52DA6D51EE6ACB000FF570C /* CustomCell.xib */,
@@ -567,6 +570,7 @@
 				C536A1591F569A34003D6786 /* EditViewController.swift in Sources */,
 				C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */,
 				C54463731F9B05B500EE18DD /* LoginViewController.swift in Sources */,
+				C51C43781FCD70A600486D2F /* Board.swift in Sources */,
 				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
 				C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */,
 				C5F9D2231FB1BF6A006E5D8E /* UserNameViewController.swift in Sources */,
