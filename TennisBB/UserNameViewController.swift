@@ -17,11 +17,11 @@ class UserNameViewController: UIViewController {
     var ref: DocumentReference? = nil
     var contents = [Content]()
     var username: String!
+    var user = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        FirebaseApp.configure()
+    
         database = Firestore.firestore()
 
         // Do any additional setup after loading the view.
@@ -33,7 +33,8 @@ class UserNameViewController: UIViewController {
     }
     func createDocument() {
         ref = database.collection("Users").addDocument(data: [
-            "username": username
+            "username": username,
+            "uid": user?.uid
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

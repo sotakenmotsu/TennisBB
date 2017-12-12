@@ -237,26 +237,24 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     @IBAction func PostButton(_ sender: UIButton) {
-//        let realm = try! Realm()
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        
-        
-//        content.id = Content.lastId()
-        if content.place == "" {
+        if PlaceView.text == "" {
             self.showalert()
-        }else if content.starttime == "" {
+        }else if StartSelector.text == "" {
             self.showalert()
-        }else if content.endtime == "" {
+        }else if EndSelector.text == "" {
             self.showalert()
-        }else if content.member == "" {
+        }else if MemberSelector.text == "" {
             self.showalert()
-        }else if content.level == "" {
+        }else if LevelSelector.text == "" {
             self.showalert()
-        }else if content.comment == "コメント" {
+        }else if Comment.text == "コメント" {
             self.showalert()
         }else{
+            let board = Board(place: String, date: Int, startTIme: Int, endTime: Int, member: Int, level: Int, comment: String, uid: String)
             self.dismiss(animated: true, completion: nil)
+            ref = database.collection("Boards").addDocument(data:
+                board.toDictionary())
         }
     }
     

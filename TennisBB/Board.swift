@@ -20,7 +20,8 @@ class Board  {
     var comment = ""
     var uid = ""
     
-    init(dic: [String: Any]) {
+    convenience init(dic: [String: Any]) {
+        self.init()
         self.place = dic["place"] as! String
         self.date = dic["date"] as! Int
         self.startTime = dic["start"] as! Int
@@ -29,6 +30,18 @@ class Board  {
         self.level = dic["level"] as! Int
         self.comment = dic["comment"] as! String
         
+    }
+    
+    convenience init(place: String, date: Int, startTIme: Int, endTime: Int, member: Int, level: Int, comment: String, uid: String) {
+        self.init()
+        self.place = place
+        self.date = date
+        self.startTime = startTIme
+        self.endTime = endTime
+        self.member = member
+        self.level = level
+        self.comment = comment
+        self.uid = uid
     }
     
     func toDictionary() -> [String: Any] {
