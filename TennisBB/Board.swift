@@ -12,7 +12,7 @@ import Foundation
 class Board  {
     
     var place = ""
-    var date: Int!
+    var date = ""
     var startTime: Int!
     var endTime: Int!
     var member: Int!
@@ -23,7 +23,7 @@ class Board  {
     convenience init(dic: [String: Any]) {
         self.init()
         self.place = dic["place"] as! String
-        self.date = dic["date"] as! Int
+        self.date = dic["date"] as! String
         self.startTime = dic["start"] as! Int
         self.endTime = dic["end"] as! Int
         self.member = dic["member"] as! Int
@@ -32,11 +32,11 @@ class Board  {
         
     }
     
-    convenience init(place: String, date: Int, startTIme: Int, endTime: Int, member: Int, level: Int, comment: String, uid: String) {
+    convenience init(place: String, date: String, startTime: Int, endTime: Int, member: Int, level: Int, comment: String, uid: String) {
         self.init()
         self.place = place
         self.date = date
-        self.startTime = startTIme
+        self.startTime = startTime
         self.endTime = endTime
         self.member = member
         self.level = level

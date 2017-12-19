@@ -37,6 +37,8 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBOutlet var Comment: UITextView!
     
+    var uid: String = Auth.auth().currentUser!.uid
+    
     @IBOutlet var postbutton: UIButton!
     
     var database: Firestore!
@@ -155,9 +157,9 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }else if pickerView == MpickerView{
             return "\(row)人"
         }else if pickerView == SpickerView{
-            return "\(row+8)"
+            return "\(row+8)時"
         }else{
-            return "\(row+8)"
+            return "\(row+8)時"
         }
     }
     
@@ -237,7 +239,6 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     @IBAction func PostButton(_ sender: UIButton) {
-        
         if PlaceView.text == "" {
             self.showalert()
         }else if StartSelector.text == "" {
@@ -251,7 +252,7 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }else if Comment.text == "コメント" {
             self.showalert()
         }else{
-            let board = Board(place: String, date: Int, startTIme: Int, endTime: Int, member: Int, level: Int, comment: String, uid: String)
+            let board = Board(place: PlaceView.text!, date: DateSelector.text!, startTime: Int(StartSelector.text!)!, endTime: Int(EndSelector.text!)!, member: Int(MemberSelector.text!)!, level: Int(LevelSelector.text!)!, comment: Comment.text!, uid: uid)
             self.dismiss(animated: true, completion: nil)
             ref = database.collection("Boards").addDocument(data:
                 board.toDictionary())
