@@ -239,17 +239,17 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     @IBAction func PostButton(_ sender: UIButton) {
-        if PlaceView.text == "" {
+        if PlaceView.text == "" || PlaceView.text == nil {
             self.showalert()
-        }else if StartSelector.text == "" {
+        }else if StartSelector.text == "" || StartSelector.text == nil {
             self.showalert()
-        }else if EndSelector.text == "" {
+        }else if EndSelector.text == "" || EndSelector.text == nil {
             self.showalert()
-        }else if MemberSelector.text == "" {
+        }else if MemberSelector.text == "" || MemberSelector.text == nil {
             self.showalert()
-        }else if LevelSelector.text == "" {
+        }else if LevelSelector.text == "" || LevelSelector.text == nil {
             self.showalert()
-        }else if Comment.text == "コメント" {
+        }else if Comment.text == "コメント" || Comment.text == nil {
             self.showalert()
         }else{
             let board = Board(place: PlaceView.text!, date: DateSelector.text!, startTime: Int(StartSelector.text!)!, endTime: Int(EndSelector.text!)!, member: Int(MemberSelector.text!)!, level: Int(LevelSelector.text!)!, comment: Comment.text!, uid: uid)
