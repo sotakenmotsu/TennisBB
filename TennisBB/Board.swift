@@ -29,6 +29,7 @@ class Board  {
         self.member = dic["member"] as! Int
         self.level = dic["level"] as! Int
         self.comment = dic["comment"] as! String
+        self.uid = dic["uid"] as! String
         
     }
     
@@ -51,7 +52,8 @@ class Board  {
                                   "end": self.endTime,
                                   "member": self.member,
                                   "level": self.level,
-                                  "comment": self.comment]
+                                  "comment": self.comment,
+                                  "uid": self.uid]
         return dic
     }
 

@@ -41,7 +41,7 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBOutlet var postbutton: UIButton!
     
-    var database: Firestore!
+    var database: Firestore = Firestore.firestore()
     var ref: DocumentReference? = nil
     
     override func viewDidLoad() {
@@ -172,8 +172,10 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
             self.member = row
         }else if pickerView == SpickerView {
             self.StartSelector.text = "\(row+8)時"
+            self.start = row
         }else{
             self.EndSelector.text = "\(row+8)時"
+            self.end = row
         }
     }
     
@@ -252,10 +254,17 @@ class RContentsViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }else if Comment.text == "コメント" || Comment.text == nil {
             self.showalert()
         }else{
-            let board = Board(place: PlaceView.text!, date: DateSelector.text!, startTime: Int(StartSelector.text!)!, endTime: Int(EndSelector.text!)!, member: Int(MemberSelector.text!)!, level: Int(LevelSelector.text!)!, comment: Comment.text!, uid: uid)
-            self.dismiss(animated: true, completion: nil)
-            ref = database.collection("Boards").addDocument(data:
-                board.toDictionary())
+            let board = Board(place: PlaceView.text!, date: DateSelector.text!, startTime: start, endTime: end, member: member, level: level, comment: Comment.text!, uid: uid)
+            ref = database.collection("Boards").addDocument(data: board.toDictionary(), completion: { (error) in
+                if error != nil {
+                    let alert: UIAlertController = UIAlertController(title: "保存で行きませんでした", message: "もう一度お願いします", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "戻る", style: UIAlertActionStyle.default))
+                    self.present(alert, animated: true, completion: nil)
+                }else {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+            
         }
     }
     

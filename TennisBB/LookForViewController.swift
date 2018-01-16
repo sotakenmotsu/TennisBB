@@ -8,17 +8,32 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class LookForViewController: UITableViewController {
     
 //    let realm = try! Realm()
     var contents = [Content]()
     var content: Content?
+    var boards = [Board]()
+    var database: Firestore = Firestore.firestore()
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 //        contents = realm.objects(Contents.self)
+        database.collection("Boards").getDocuments(completion: { (documents, error) in
+            // エラー処理
+            if error == nil {
+                print("gotdocuments")
+            }else{
+                print("didn't getdocuments")
+            }
+            // QuerySnapshotを[Board]に変換
+            Board.init(place: documents., date: <#T##String#>, startTime: <#T##Int#>, endTime: <#T##Int#>, member: <#T##Int#>, level: <#T##Int#>, comment: <#T##String#>, uid: <#T##String#>)
+            // [Board]をboardsに入れる
+        })
         self.tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
