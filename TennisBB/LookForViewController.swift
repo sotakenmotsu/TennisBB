@@ -17,6 +17,7 @@ class LookForViewController: UITableViewController {
     var content: Content?
     var boards = [Board]()
     var database: Firestore = Firestore.firestore()
+    var board: AnyClass!
     
    
     override func viewDidLoad() {
@@ -31,8 +32,14 @@ class LookForViewController: UITableViewController {
                 print("didn't getdocuments")
             }
             // QuerySnapshotを[Board]に変換
-            Board.init(place: documents., date: <#T##String#>, startTime: <#T##Int#>, endTime: <#T##Int#>, member: <#T##Int#>, level: <#T##Int#>, comment: <#T##String#>, uid: <#T##String#>)
+            for document in documents!.documents {
+                print("\(document.documentID) => \(document.data())")
+                Board(dic: document.data())
+                board = Board(dic: document.data())
+            }
             // [Board]をboardsに入れる
+            self.boards = [Board]()
+            print(Board())
         })
         self.tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
         let refresh = UIRefreshControl()
