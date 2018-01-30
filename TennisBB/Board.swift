@@ -19,6 +19,7 @@ class Board  {
     var level: Int!
     var comment = ""
     var uid = ""
+    var bid = ""
     
     convenience init(dic: [String: Any]) {
         self.init()

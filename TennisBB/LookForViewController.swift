@@ -14,6 +14,7 @@ class LookForViewController: UITableViewController {
     
     var boards = [Board]()
     var board: Board?
+    var bid = [String]()
     var database: Firestore = Firestore.firestore()
     
    
@@ -27,6 +28,7 @@ class LookForViewController: UITableViewController {
                 for document in documents!.documents {
                     print("\(document.documentID) => \(document.data())")
                     self.boards.append(Board(dic: document.data()))
+                    self.bid.append("\(document.documentID)")
                 }
                 self.tableView.reloadData()
             }else{
@@ -60,6 +62,15 @@ class LookForViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         //削除処理
+        database.collection("Boards").document("\(bid[indexPath.row])").updateData([
+            "\(bid[indexPath.row])": FieldValue.delete()
+        ]) { err in
+            if let err = err {
+                print("didn't delete")
+            } else {
+                print("delete complete")
+            }
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
