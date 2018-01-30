@@ -24,13 +24,13 @@ class HeaderView: UIView {
     @IBOutlet var level: UILabel!
     @IBOutlet var comment: UILabel!
     
-    func setContents(contents: Content) {
+    func setContents(contents: Board) {
         place.text = contents.place
         date.text = contents.date
-        Stime.text = contents.starttime
-        Etime.text = contents.endtime
-        member.text = contents.member
-        level.text = contents.level
+        Stime.text = "\(contents.startTime + 8)時"
+        Etime.text = "\(contents.endTime + 8)時"
+        member.text = "\(contents.member + 0)人"
+        level.text = "Lv.\(contents.level + 0)"
         comment.text = contents.comment
     }
 

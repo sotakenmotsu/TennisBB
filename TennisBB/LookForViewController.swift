@@ -12,34 +12,26 @@ import Firebase
 
 class LookForViewController: UITableViewController {
     
-//    let realm = try! Realm()
-    var contents = [Content]()
-    var content: Content?
     var boards = [Board]()
+    var board: Board?
     var database: Firestore = Firestore.firestore()
-    var board: AnyClass!
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        contents = realm.objects(Contents.self)
+        // Do any additional setup after loading the view, typically from a nib
         database.collection("Boards").getDocuments(completion: { (documents, error) in
-            // エラー処理
             if error == nil {
                 print("gotdocuments")
+                self.boards.removeAll()
+                for document in documents!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    self.boards.append(Board(dic: document.data()))
+                }
+                self.tableView.reloadData()
             }else{
                 print("didn't getdocuments")
             }
-            // QuerySnapshotを[Board]に変換
-            for document in documents!.documents {
-                print("\(document.documentID) => \(document.data())")
-                Board(dic: document.data())
-                board = Board(dic: document.data())
-            }
-            // [Board]をboardsに入れる
-            self.boards = [Board]()
-            print(Board())
         })
         self.tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
         let refresh = UIRefreshControl()
@@ -49,11 +41,25 @@ class LookForViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         navigationController?.navigationBar.barTintColor = ColorManager.barcolor
         navigationController?.navigationBar.tintColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
+        navigationItem.rightBarButtonItem = editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        self.tableView.setEditing(editing, animated: animated)
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row == 1
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //削除処理
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,20 +72,20 @@ class LookForViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-        cell.placelabel.text = contents[indexPath.row].place
-        cell.startlabel.text = contents[indexPath.row].starttime
-        cell.endlabel.text = contents[indexPath.row].endtime
+        cell.placelabel.text = boards[indexPath.row].place
+        cell.startlabel.text = "\(boards[indexPath.row].startTime + 8)時"
+        cell.endlabel.text = "\(boards[indexPath.row].endTime + 8)時"
         cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contents.count ?? 0
+        return boards.count
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        content = contents[indexPath.row]
-        if content != nil {
+        board = boards[indexPath.row]
+        if board != nil {
             performSegue(withIdentifier: "toLContentsView", sender: nil)
         }
     }
@@ -87,7 +93,8 @@ class LookForViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toLContentsView"){
             let LC: LContentsViewController = (segue.destination as? LContentsViewController)!
-            LC.contents = contents
+            LC.boards = boards
+            LC.board = board
         }
     }
     

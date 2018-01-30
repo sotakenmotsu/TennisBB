@@ -13,19 +13,19 @@ import Foundation
 class LContentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
-    var content: Content?
-    var contents = [Content]()
+    var board: Board?
+    var boards = [Board]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
         let sizewidth = UIScreen.main.bounds.size.width
         let headerView = HeaderView.instantiate()
         headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
-        headerView.setContents(contents: content!)
+        headerView.setContents(contents: board!)
         tableView.tableHeaderView = headerView
         self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
