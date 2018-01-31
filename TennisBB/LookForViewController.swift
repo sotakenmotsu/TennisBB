@@ -62,9 +62,7 @@ class LookForViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         //削除処理
-        database.collection("Boards").document("\(bid[indexPath.row])").updateData([
-            "\(bid[indexPath.row])": FieldValue.delete()
-        ]) { err in
+        database.collection("Boards").document("\(bid[indexPath.row])").delete() { err in
             if let err = err {
                 print("didn't delete")
             } else {
