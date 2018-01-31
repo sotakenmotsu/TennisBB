@@ -57,7 +57,7 @@ class LookForViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.row == boards.count
+        return true
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -69,6 +69,10 @@ class LookForViewController: UITableViewController {
                 print("delete complete")
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "削除"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

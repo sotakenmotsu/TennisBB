@@ -65,7 +65,6 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         let alert: UIAlertController = UIAlertController(title: "この投稿を削除します", message: "よろしいですか？", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title:"キャンセル", style: .cancel))
         alert.addAction(UIAlertAction(title: "削除", style: .destructive, handler: { action in
-
             self.tableview.deleteRows(at: [indexPath], with: .fade) }))
         self.present(alert, animated: true, completion: nil)
     }
