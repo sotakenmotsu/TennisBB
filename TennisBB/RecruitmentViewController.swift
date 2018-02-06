@@ -8,30 +8,47 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class RecruitmentViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var tableview: UITableView!
+    @IBOutlet var tableView: UITableView!
 //    let realm = try! Realm()
 //    var contents: Results<Contents>? = nil
-    var content: Content?
-    var contents = [Content]()
+    var board: Board?
+    var boards = [Board]()
     var refresh: UIRefreshControl!
     @IBOutlet var newpostbutton: UIButton!
+    var database: Firestore = Firestore.firestore()
+    var bid = [String]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableview.dataSource = self
-//        contents = realm.objects(Contents.self)
-        self.tableview.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        tableView.dataSource = self
+        database.collection("Boards").getDocuments(completion: { (documents, error) in
+            if error == nil {
+                print("gotdocuments")
+                self.boards.removeAll()
+                self.bid.removeAll()
+                for document in documents!.documents {
+                    //                    print("\(document.documentID) => \(document.data())")
+                    self.boards.append(Board(dic: document.data()))
+                    self.bid.append("\(document.documentID)")
+                }
+                self.tableView.reloadData()
+            }else{
+                print("didn't getdocuments")
+            }
+        })
+        self.tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
         self.refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
-        self.tableview.addSubview(refresh)
+        self.tableView.addSubview(refresh)
         self.view.backgroundColor = ColorManager.maincolor
         newpostbutton.backgroundColor = ColorManager.buttoncolor
         newpostbutton.setTitleColor(.white, for: .normal)
-        tableview.tableFooterView = UIView(frame: .zero)
+        tableView.tableFooterView = UIView(frame: .zero)
         self.tabBarController?.tabBar.barTintColor = ColorManager.barcolor
         // Do any additional setup after loading the view.
     }
@@ -50,22 +67,29 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-        cell.placelabel.text = contents[indexPath.row].place
-        cell.startlabel.text = contents[indexPath.row].starttime
-        cell.endlabel.text = contents[indexPath.row].endtime
+        cell.placelabel.text = boards[indexPath.row].place
+        cell.startlabel.text = "\(boards[indexPath.row].startTime + 8)時"
+        cell.endlabel.text = "\(boards[indexPath.row].endTime + 8)時"
         cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contents.count ?? 0
+        return boards.count ?? 0
     }
     
     func showalert(indexPath: IndexPath) {
         let alert: UIAlertController = UIAlertController(title: "この投稿を削除します", message: "よろしいですか？", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title:"キャンセル", style: .cancel))
         alert.addAction(UIAlertAction(title: "削除", style: .destructive, handler: { action in
-            self.tableview.deleteRows(at: [indexPath], with: .fade) }))
+            self.database.collection("Boards").document("\(self.bid[indexPath.row])").delete() { err in
+                if let err = err {
+                    print("didn't delete")
+                    self.refreshTableView()
+                } else {
+                    print("delete complete")
+                }
+            } }))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -76,15 +100,52 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         return [deletebutton]
     }
     
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "削除"
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             self.showalert(indexPath: indexPath)
         }
     }
     
+    func segueToLContentsViewController() {
+        self.performSegue(withIdentifier: "toRContentsVEViewController", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        board = boards[indexPath.row]
+        if board != nil {
+            performSegue(withIdentifier: "toRContentsVEView", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        if (segue.identifier == "toRContentsVEView"){
+            let RC: RContentsVEViewController = (segue.destination as? RContentsVEViewController)!
+            RC.board = board
+        }
+    }
+
+    
     func refreshTableView() {
         sleep(1)
-        tableview.reloadData()
+        database.collection("Boards").getDocuments(completion: { (documents, error) in
+            if error == nil {
+                print("gotdocuments")
+                self.boards.removeAll()
+                self.bid.removeAll()
+                for document in documents!.documents {
+                    //                    print("\(document.documentID) => \(document.data())")
+                    self.boards.append(Board(dic: document.data()))
+                    self.bid.append("\(document.documentID)")
+                }
+                self.tableView.reloadData()
+            }else{
+                print("didn't getdocuments")
+            }
+        })
         refresh.endRefreshing()
     }
     

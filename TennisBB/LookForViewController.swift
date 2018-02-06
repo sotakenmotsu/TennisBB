@@ -25,8 +25,9 @@ class LookForViewController: UITableViewController {
             if error == nil {
                 print("gotdocuments")
                 self.boards.removeAll()
+                self.bid.removeAll()
                 for document in documents!.documents {
-                    print("\(document.documentID) => \(document.data())")
+//                    print("\(document.documentID) => \(document.data())")
                     self.boards.append(Board(dic: document.data()))
                     self.bid.append("\(document.documentID)")
                 }
@@ -67,6 +68,7 @@ class LookForViewController: UITableViewController {
                 print("didn't delete")
             } else {
                 print("delete complete")
+                self.refreshTableView()
             }
         }
     }
@@ -106,14 +108,27 @@ class LookForViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toLContentsView"){
             let LC: LContentsViewController = (segue.destination as? LContentsViewController)!
-            LC.boards = boards
             LC.board = board
         }
     }
     
     func refreshTableView() {
         sleep(1)
-        tableView.reloadData()
+        database.collection("Boards").getDocuments(completion: { (documents, error) in
+            if error == nil {
+                print("gotdocuments")
+                self.boards.removeAll()
+                self.bid.removeAll()
+                for document in documents!.documents {
+//                    print("\(document.documentID) => \(document.data())")
+                    self.boards.append(Board(dic: document.data()))
+                    self.bid.append("\(document.documentID)")
+                }
+                self.tableView.reloadData()
+            }else{
+                print("didn't getdocuments")
+            }
+        })
         refreshControl?.endRefreshing()
     }
 
