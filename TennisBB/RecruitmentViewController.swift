@@ -26,6 +26,7 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         database.collection("Boards").getDocuments(completion: { (documents, error) in
             if error == nil {
                 print("gotdocuments")

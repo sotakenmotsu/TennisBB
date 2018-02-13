@@ -27,7 +27,7 @@ class RContentsVEViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.tableHeaderView = headerView
         self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
-        
+
         // Do any additional setup after loading the view.
     }
     
@@ -55,5 +55,9 @@ class RContentsVEViewController: UIViewController, UITableViewDelegate, UITableV
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    @IBAction func back(segue: UIStoryboardSegue) {
+        
     }
 }

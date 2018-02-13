@@ -24,7 +24,7 @@ class HeaderView: UIView {
     @IBOutlet var level: UILabel!
     @IBOutlet var comment: UILabel!
     
-    func setContents(contents: Board) {
+    func setContents(contents: Board, isHidden: Bool) {
         place.text = contents.place
         date.text = contents.date
         Stime.text = "\(contents.startTime + 8)時"
@@ -32,6 +32,13 @@ class HeaderView: UIView {
         member.text = "\(contents.member + 0)人"
         level.text = "Lv.\(contents.level + 0)"
         comment.text = contents.comment
+    }
+    
+    @IBAction func back(segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func edit() {
+//        RContentsVEViewController.performSegue(EditViewController)
     }
 
 

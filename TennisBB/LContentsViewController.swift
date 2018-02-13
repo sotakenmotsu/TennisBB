@@ -25,7 +25,7 @@ class LContentsViewController: UIViewController, UITableViewDelegate, UITableVie
         let sizewidth = UIScreen.main.bounds.size.width
         let headerView = HeaderView.instantiate()
         headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
-        headerView.setContents(contents: board!)
+        headerView.setContents(contents: board!, isHidden: true)
         tableView.tableHeaderView = headerView
         self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
