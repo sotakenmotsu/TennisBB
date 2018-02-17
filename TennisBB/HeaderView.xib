@@ -132,8 +132,10 @@
             <connections>
                 <outlet property="Etime" destination="uxg-gA-Fh3" id="x1P-tJ-bFa"/>
                 <outlet property="Stime" destination="Sa8-OJ-dNw" id="g0y-eO-aZp"/>
+                <outlet property="back" destination="Awh-Bn-ngy" id="Uuf-ij-Tjt"/>
                 <outlet property="comment" destination="qQX-PA-oOz" id="44q-R7-8ig"/>
                 <outlet property="date" destination="gFW-qs-ENx" id="auB-8m-8VB"/>
+                <outlet property="edit" destination="xcw-Mk-c5L" id="1v4-XW-6jC"/>
                 <outlet property="level" destination="YUS-PA-n7A" id="IJo-O9-xdc"/>
                 <outlet property="member" destination="7eZ-WZ-zjf" id="av5-kn-tRO"/>
                 <outlet property="place" destination="haY-Mb-qE8" id="u5B-u8-5Lt"/>

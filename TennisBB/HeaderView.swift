@@ -23,6 +23,8 @@ class HeaderView: UIView {
     @IBOutlet var member: UILabel!
     @IBOutlet var level: UILabel!
     @IBOutlet var comment: UILabel!
+    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var edit:UIButton!
     
     func setContents(contents: Board, isHidden: Bool) {
         place.text = contents.place
@@ -32,13 +34,8 @@ class HeaderView: UIView {
         member.text = "\(contents.member + 0)人"
         level.text = "Lv.\(contents.level + 0)"
         comment.text = contents.comment
-    }
-    
-    @IBAction func back(segue: UIStoryboardSegue) {
-    }
-    
-    @IBAction func edit() {
-//        RContentsVEViewController.performSegue(EditViewController)
+        back.isHidden = isHidden
+        edit.isHidden = isHidden
     }
 
 
