@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE31DFA7371E94DE45BBB983 /* Pods_TennisBBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38048A9D8BFD6BF55072BC65 /* Pods_TennisBBUITests.framework */; };
-		C50F7AC92029C12100230AEE /* RContentsVEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50F7AC82029C12100230AEE /* RContentsVEViewController.swift */; };
-		C512D0B91E38B971006BF204 /* LContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512D0B81E38B971006BF204 /* LContentsViewController.swift */; };
+		C50F7AC92029C12100230AEE /* RecContentsViewEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50F7AC82029C12100230AEE /* RecContentsViewEditVC.swift */; };
+		C512D0B91E38B971006BF204 /* LookFContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512D0B81E38B971006BF204 /* LookFContentsViewController.swift */; };
 		C51C43781FCD70A600486D2F /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C43771FCD70A600486D2F /* Board.swift */; };
 		C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52DA6D41EE6ACB000FF570C /* CustomCell.swift */; };
 		C52DA6D71EE6ACB000FF570C /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52DA6D51EE6ACB000FF570C /* CustomCell.xib */; };
@@ -32,7 +32,7 @@
 		C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */; };
 		C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */; };
 		C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C55ABBCA1E2F7E9400D38DE1 /* icon.png */; };
-		C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */; };
+		C55ABBCD1E3397E600D38DE1 /* RecContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBCC1E3397E600D38DE1 /* RecContentsVC.swift */; };
 		C5D85D3B1F10C4CF003D45FD /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D85D391F10C4CF003D45FD /* HeaderView.xib */; };
 		C5D85D3D1F10E074003D45FD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3C1F10E074003D45FD /* HeaderView.swift */; };
 		C5D85D3F1F10E29D003D45FD /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */; };
@@ -70,8 +70,8 @@
 		567799FCA473B7561FF2A3B2 /* Pods-TennisBBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBBTests/Pods-TennisBBTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0CF9EFF539D25939800894F /* Pods-TennisBB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBB.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBB/Pods-TennisBB.release.xcconfig"; sourceTree = "<group>"; };
 		A7AF2C9F48118799F0130C79 /* Pods-TennisBBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBBUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBBUITests/Pods-TennisBBUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C50F7AC82029C12100230AEE /* RContentsVEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RContentsVEViewController.swift; sourceTree = "<group>"; };
-		C512D0B81E38B971006BF204 /* LContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LContentsViewController.swift; sourceTree = "<group>"; };
+		C50F7AC82029C12100230AEE /* RecContentsViewEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecContentsViewEditVC.swift; sourceTree = "<group>"; };
+		C512D0B81E38B971006BF204 /* LookFContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookFContentsViewController.swift; sourceTree = "<group>"; };
 		C51C43771FCD70A600486D2F /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		C52DA6D41EE6ACB000FF570C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52DA6D51EE6ACB000FF570C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		C55ABBCA1E2F7E9400D38DE1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
-		C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RContentsViewController.swift; sourceTree = "<group>"; };
+		C55ABBCC1E3397E600D38DE1 /* RecContentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecContentsVC.swift; sourceTree = "<group>"; };
 		C5D85D391F10C4CF003D45FD /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		C5D85D3C1F10E074003D45FD /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
@@ -189,11 +189,11 @@
 				C54463721F9B05B500EE18DD /* LoginViewController.swift */,
 				C5F9D2221FB1BF6A006E5D8E /* UserNameViewController.swift */,
 				C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */,
-				C55ABBCC1E3397E600D38DE1 /* RContentsViewController.swift */,
-				C50F7AC82029C12100230AEE /* RContentsVEViewController.swift */,
+				C55ABBCC1E3397E600D38DE1 /* RecContentsVC.swift */,
+				C50F7AC82029C12100230AEE /* RecContentsViewEditVC.swift */,
 				C536A1581F569A34003D6786 /* EditViewController.swift */,
 				C55ABB981E264F1800D38DE1 /* LookForViewController.swift */,
-				C512D0B81E38B971006BF204 /* LContentsViewController.swift */,
+				C512D0B81E38B971006BF204 /* LookFContentsViewController.swift */,
 				C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */,
 				C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */,
 				C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */,
@@ -575,16 +575,16 @@
 				C54463731F9B05B500EE18DD /* LoginViewController.swift in Sources */,
 				C51C43781FCD70A600486D2F /* Board.swift in Sources */,
 				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
-				C55ABBCD1E3397E600D38DE1 /* RContentsViewController.swift in Sources */,
+				C55ABBCD1E3397E600D38DE1 /* RecContentsVC.swift in Sources */,
 				C5F9D2231FB1BF6A006E5D8E /* UserNameViewController.swift in Sources */,
-				C50F7AC92029C12100230AEE /* RContentsVEViewController.swift in Sources */,
+				C50F7AC92029C12100230AEE /* RecContentsViewEditVC.swift in Sources */,
 				C536A1571F557506003D6786 /* ColorManager.swift in Sources */,
 				C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */,
 				C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */,
 				C5D85D3D1F10E074003D45FD /* HeaderView.swift in Sources */,
 				C5D85D3F1F10E29D003D45FD /* HeaderViewController.swift in Sources */,
 				C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */,
-				C512D0B91E38B971006BF204 /* LContentsViewController.swift in Sources */,
+				C512D0B91E38B971006BF204 /* LookFContentsViewController.swift in Sources */,
 				C55ABBC51E264F8100D38DE1 /* RecruitmentViewController.swift in Sources */,
 				C5DB20F61E4CA6E50072CB3B /* Content.swift in Sources */,
 			);

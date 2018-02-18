@@ -24,7 +24,7 @@ class HeaderView: UIView {
     @IBOutlet var level: UILabel!
     @IBOutlet var comment: UILabel!
     @IBOutlet weak var back: UIButton!
-    @IBOutlet weak var edit:UIButton!
+    @IBOutlet weak var edit: UIButton!
     
     func setContents(contents: Board, isHidden: Bool) {
         place.text = contents.place
@@ -36,6 +36,10 @@ class HeaderView: UIView {
         comment.text = contents.comment
         back.isHidden = isHidden
         edit.isHidden = isHidden
+    }
+    
+    @IBAction func backButton(segue: UIStoryboardSegue) {
+        
     }
 
 

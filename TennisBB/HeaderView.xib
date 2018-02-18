@@ -117,14 +117,14 @@
                     <rect key="frame" x="40" y="278" width="91" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="back"/>
+                    <connections>
+                        <action selector="backButton" destination="i5M-Pr-FkT" eventType="touchUpInside" id="HqH-kx-9yh"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-Mk-c5L">
                     <rect key="frame" x="189" y="278" width="91" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="edit"/>
-                    <connections>
-                        <action selector="edit" destination="i5M-Pr-FkT" eventType="touchUpInside" id="TsM-z7-chp"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
