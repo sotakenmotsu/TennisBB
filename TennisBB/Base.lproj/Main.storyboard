@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-909.60000000000002" y="48.125937031484263"/>
         </scene>
-        <!--LookF Contents View Controller-->
+        <!--Look For Contents View Controller-->
         <scene sceneID="qcU-TP-80S">
             <objects>
-                <viewController id="ik0-pF-xQG" customClass="LookFContentsViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ik0-pF-xQG" customClass="LookForContentsViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q5j-1k-mrJ"/>
                         <viewControllerLayoutGuide type="bottom" id="vvR-AN-fNE"/>
@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="-906" y="779"/>
         </scene>
-        <!--Rec ContentsVC-->
+        <!--Recruitment Contents View Controller-->
         <scene sceneID="qm5-lo-RKa">
             <objects>
-                <viewController id="cKl-Dk-mdg" customClass="RecContentsVC" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cKl-Dk-mdg" customClass="RecruitmentContentsViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GJU-XC-XBQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ZRa-ko-UBX"/>
@@ -727,10 +727,10 @@
             </objects>
             <point key="canvasLocation" x="1786" y="47"/>
         </scene>
-        <!--Rec Contents View EditVC-->
+        <!--Recruitment Contents View Edit View Controller-->
         <scene sceneID="TTt-yf-u37">
             <objects>
-                <viewController id="XzO-ZD-F6C" customClass="RecContentsViewEditVC" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XzO-ZD-F6C" customClass="RecruitmentContentsViewEditViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YWy-CY-Rs8"/>
                         <viewControllerLayoutGuide type="bottom" id="ejI-uO-96D"/>

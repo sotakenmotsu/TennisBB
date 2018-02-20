@@ -124,7 +124,7 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toRContentsVEView"){
-            let RC: RContentsVEViewController = (segue.destination as? RContentsVEViewController)!
+            let RC: RecruitmentContentsViewEditViewController = (segue.destination as? RecruitmentContentsViewEditViewController)!
             RC.board = board
         }
     }

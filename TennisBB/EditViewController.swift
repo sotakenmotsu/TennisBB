@@ -46,8 +46,8 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         super.viewDidLoad()
         
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RContentsViewController.done))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RContentsViewController.cancel))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RecruitmentContentsViewController.done))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RecruitmentContentsViewController.cancel))
         toolbar.setItems([cancelItem, doneItem], animated: true)
         
         LpickerView.delegate = self

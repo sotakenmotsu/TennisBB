@@ -107,7 +107,7 @@ class LookForViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toLContentsView"){
-            let LC: LContentsViewController = (segue.destination as? LContentsViewController)!
+            let LC: LookForContentsViewController = (segue.destination as? LookForContentsViewController)!
             LC.board = board
         }
     }

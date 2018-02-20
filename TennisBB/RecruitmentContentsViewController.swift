@@ -11,7 +11,7 @@ import Foundation
 import Firebase
 
 
-class RecContentsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
+class RecruitmentContentsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet var PlaceView: UITextField!
     
@@ -48,8 +48,8 @@ class RecContentsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         super.viewDidLoad()
         
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RContentsViewController.done))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RContentsViewController.cancel))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RecruitmentContentsViewController.done))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RecruitmentContentsViewController.cancel))
         toolbar.setItems([cancelItem, doneItem], animated: true)
         
         LpickerView.delegate = self
