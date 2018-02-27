@@ -9,8 +9,14 @@
 import UIKit
 import Foundation
 
+protocol HeaderViewDelegate: class {
+    func back()
+    func edit()
+}
+
 class HeaderView: UIView {
     
+    weak var delegate: HeaderViewDelegate?
     static func instantiate() -> HeaderView {
         let view = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)?.first as! HeaderView
         return view
@@ -23,8 +29,8 @@ class HeaderView: UIView {
     @IBOutlet var member: UILabel!
     @IBOutlet var level: UILabel!
     @IBOutlet var comment: UILabel!
-    @IBOutlet weak var back: UIButton!
-    @IBOutlet weak var edit: UIButton!
+    @IBOutlet var back: UIButton!
+    @IBOutlet var edit: UIButton!
     
     func setContents(contents: Board, isHidden: Bool) {
         place.text = contents.place
@@ -34,12 +40,20 @@ class HeaderView: UIView {
         member.text = "\(contents.member + 0)人"
         level.text = "Lv.\(contents.level + 0)"
         comment.text = contents.comment
+        back.backgroundColor = ColorManager.buttoncolor
+        edit.backgroundColor = ColorManager.buttoncolor
+        back.setTitleColor(.white, for: .normal)
+        edit.setTitleColor(.white, for: .normal)
         back.isHidden = isHidden
         edit.isHidden = isHidden
     }
     
-    @IBAction func backButton(segue: UIStoryboardSegue) {
-        
+    @IBAction func backButton() {
+         delegate?.back()
+    }
+    
+    @IBAction func editButton() {
+        delegate?.edit()
     }
 
 

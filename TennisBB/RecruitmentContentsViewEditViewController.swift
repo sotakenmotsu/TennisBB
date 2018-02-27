@@ -9,11 +9,12 @@
 import UIKit
 import Foundation
 
-class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HeaderViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     var board: Board?
     var boards = [Board]()
+    var row: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDe
         let headerView = HeaderView.instantiate()
         headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
         headerView.setContents(contents: board!, isHidden: false)
+        headerView.delegate = self
         tableView.tableHeaderView = headerView
         self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
@@ -38,6 +40,10 @@ class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var Content = segue.destination as! HeaderView
+        if (segue.identifier == "editViewController") {
+            let editViewController: EditViewController = (segue.destination as? EditViewController)!
+            editViewController.row = row
+        }
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,7 +63,13 @@ class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDe
         return 50
     }
     
-    @IBAction func back(segue: UIStoryboardSegue) {
-        
+    func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func edit() {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "editViewController")
+        present(nextView, animated: true, completion: nil)
     }
 }

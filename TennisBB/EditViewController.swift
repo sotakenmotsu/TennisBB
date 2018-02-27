@@ -41,10 +41,12 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     var database: Firestore = Firestore.firestore()
     var ref: DocumentReference? = nil
+    var row: Int!
+    var boards = [Board]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(row)
         let toolbar = UIToolbar(frame: CGRectMake(0, 0, 0, 35))
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RecruitmentContentsViewController.done))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(RecruitmentContentsViewController.cancel))
@@ -268,6 +270,10 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     @IBAction func backbutton(_ segue: UIStoryboard) {
         self.view.backgroundColor = ColorManager.buttoncolor
+    }
+    
+    func setContents(boards: ) {
+        PlaceView.text = board[row].place
     }
     
 

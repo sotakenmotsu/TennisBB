@@ -257,7 +257,7 @@ class RecruitmentContentsViewController: UIViewController, UIPickerViewDataSourc
             let board = Board(place: PlaceView.text!, date: DateSelector.text!, startTime: start, endTime: end, member: member, level: level, comment: Comment.text!, uid: uid)
             ref = database.collection("Boards").addDocument(data: board.toDictionary(), completion: { (error) in
                 if error != nil {
-                    let alert: UIAlertController = UIAlertController(title: "保存で行きませんでした", message: "もう一度お願いします", preferredStyle: UIAlertControllerStyle.alert)
+                    let alert: UIAlertController = UIAlertController(title: "保存できませんでした", message: "もう一度お願いします", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "戻る", style: UIAlertActionStyle.default))
                     self.present(alert, animated: true, completion: nil)
                 }else {
