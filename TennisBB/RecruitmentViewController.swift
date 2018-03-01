@@ -21,7 +21,6 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet var newpostbutton: UIButton!
     var database: Firestore = Firestore.firestore()
     var bid = [String]()
-    var row: Int!
 
 
     override func viewDidLoad() {
@@ -121,14 +120,12 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         if board != nil {
             performSegue(withIdentifier: "toRContentsVEView", sender: nil)
         }
-        row = indexPath.row
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if (segue.identifier == "toRContentsVEView"){
             let RC: RecruitmentContentsViewEditViewController = (segue.destination as? RecruitmentContentsViewEditViewController)!
             RC.board = board
-            RC.row = row
         }
     }
 

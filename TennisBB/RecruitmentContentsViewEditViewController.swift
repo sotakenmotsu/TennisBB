@@ -14,7 +14,6 @@ class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDe
     @IBOutlet var tableView: UITableView!
     var board: Board?
     var boards = [Board]()
-    var row: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +41,7 @@ class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDe
         var Content = segue.destination as! HeaderView
         if (segue.identifier == "editViewController") {
             let editViewController: EditViewController = (segue.destination as? EditViewController)!
-            editViewController.row = row
+            editViewController.board = board
         }
     }
     
