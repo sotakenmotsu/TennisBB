@@ -69,6 +69,7 @@ class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDe
     func edit() {
         let storyboard: UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "editViewController")
+        nextView.board = board
         present(nextView, animated: true, completion: nil)
     }
 }
