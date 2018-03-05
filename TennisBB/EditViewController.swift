@@ -100,9 +100,8 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         toolBar.items = [toolBarBtn, toolBarBtnToday]
         DateSelector.inputAccessoryView = toolBar
         
-        Comment.text = "コメント"
         Comment.delegate = self
-        Comment.textColor = UIColor.lightGray
+        Comment.textColor = UIColor.black
         
         self.view.backgroundColor = ColorManager.maincolor
         postbutton.backgroundColor = ColorManager.buttoncolor
@@ -275,6 +274,12 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func setContents() {
         PlaceView.text = board?.place
+        DateSelector.text = board?.date
+        StartSelector.text = "\((board?.startTime)! + 8)時"
+        EndSelector.text = "\((board?.endTime)! + 8)時"
+        MemberSelector.text = "\((board?.member)! + 0)人"
+        LevelSelector.text = "Lv.\((board?.level)! + 0)"
+        Comment.text = board?.comment
     }
     
 
