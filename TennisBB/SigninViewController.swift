@@ -14,8 +14,12 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    @IBOutlet var usernameText
+    @IBOutlet var usernameTextField: UITextField!
     private var toolbar: UIToolbar!
+    var database: Firestore!
+    var username: String!
+    var ref: DocumentReference? = nil
+    var user = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +27,10 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
-        self.view.backgroundColor = ColorManager.maincolor
-//        self.layoutFaceBookButton()
+        database = Firestore.firestore()
+        emailTextField.placeholder = "email"
+        passwordTextField.placeholder = "password"
+        usernameTextField.placeholder = "username"
 
         // Do any additional setup after loading the view.
     }
@@ -81,20 +87,24 @@ class SigninViewController: UIViewController,UITextFieldDelegate {
         })
     }
     
-    @IBAction func logOut() {
-        self.logout()
-    }
-    
-    func logout() {
-        do {
-            try Auth.auth().signOut()
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController(withidentifier: "Nav")
-//            self.present(storyboard, animated: true, completion: nil)
-            print("OK")
-        } catch let error as NSError {
-            print("\(error.localizedDescription)")
+    func createDocument() {
+        ref = database.collection("Users").addDocument(data: [
+            "username": username,
+            "uid": user?.uid
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(self.ref!.documentID)")
+            }
         }
     }
+    
+    @IBAction func namedButton() {
+        username = usernameTextField.text
+        self.createDocument()
+    }
+    
 
     /*//
     // MARK: - Navigation

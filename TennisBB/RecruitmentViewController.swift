@@ -46,11 +46,8 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         self.refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refresh)
-        self.view.backgroundColor = ColorManager.maincolor
-        newpostbutton.backgroundColor = ColorManager.buttoncolor
         newpostbutton.setTitleColor(.white, for: .normal)
         tableView.tableFooterView = UIView(frame: .zero)
-        self.tabBarController?.tabBar.barTintColor = ColorManager.barcolor
         // Do any additional setup after loading the view.
     }
 
@@ -71,7 +68,6 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         cell.placelabel.text = boards[indexPath.row].place
         cell.startlabel.text = "\(boards[indexPath.row].startTime + 8)時"
         cell.endlabel.text = "\(boards[indexPath.row].endTime + 8)時"
-        cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
     
@@ -150,9 +146,6 @@ class RecruitmentViewController: UIViewController, UITableViewDataSource, UITabl
         refresh.endRefreshing()
     }
     
-    @IBAction func postbutton() {
-        self.view.backgroundColor = ColorManager.buttoncolor
-    }
 
 
     

@@ -47,8 +47,6 @@ class HeaderView: UIView {
         level.textColor = UIColor.black
         comment.text = contents.comment
         comment.textColor = UIColor.black
-        back.backgroundColor = ColorManager.buttoncolor
-        edit.backgroundColor = ColorManager.buttoncolor
         back.setTitleColor(.white, for: .normal)
         edit.setTitleColor(.white, for: .normal)
         back.isHidden = isHidden

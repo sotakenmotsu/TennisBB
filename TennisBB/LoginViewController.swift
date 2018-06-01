@@ -21,7 +21,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
-        self.view.backgroundColor = ColorManager.maincolor
+        emailTextField.placeholder = "email"
+        passwordTextField.placeholder = "password"
         // Do any additional setup after loading the view.
     }
 

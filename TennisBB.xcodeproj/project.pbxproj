@@ -14,7 +14,6 @@
 		C51C43781FCD70A600486D2F /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C43771FCD70A600486D2F /* Board.swift */; };
 		C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52DA6D41EE6ACB000FF570C /* CustomCell.swift */; };
 		C52DA6D71EE6ACB000FF570C /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52DA6D51EE6ACB000FF570C /* CustomCell.xib */; };
-		C536A1571F557506003D6786 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536A1561F557506003D6786 /* ColorManager.swift */; };
 		C536A1591F569A34003D6786 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536A1581F569A34003D6786 /* EditViewController.swift */; };
 		C536A1751F5EACED003D6786 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1711F5EACED003D6786 /* friends.png */; };
 		C536A1761F5EACED003D6786 /* join.png in Resources */ = {isa = PBXBuildFile; fileRef = C536A1721F5EACED003D6786 /* join.png */; };
@@ -30,7 +29,6 @@
 		C55ABBAC1E264F1800D38DE1 /* TennisBBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBAB1E264F1800D38DE1 /* TennisBBTests.swift */; };
 		C55ABBB71E264F1800D38DE1 /* TennisBBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBB61E264F1800D38DE1 /* TennisBBUITests.swift */; };
 		C55ABBC51E264F8100D38DE1 /* RecruitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */; };
-		C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */; };
 		C55ABBC91E2F7BED00D38DE1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */; };
 		C55ABBCB1E2F7E9400D38DE1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C55ABBCA1E2F7E9400D38DE1 /* icon.png */; };
 		C55ABBCD1E3397E600D38DE1 /* RecruitmentContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55ABBCC1E3397E600D38DE1 /* RecruitmentContentsViewController.swift */; };
@@ -38,7 +36,6 @@
 		C5D85D3D1F10E074003D45FD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3C1F10E074003D45FD /* HeaderView.swift */; };
 		C5D85D3F1F10E29D003D45FD /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */; };
 		C5DB20F61E4CA6E50072CB3B /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DB20F51E4CA6E50072CB3B /* Content.swift */; };
-		C5F9D2231FB1BF6A006E5D8E /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F9D2221FB1BF6A006E5D8E /* UserNameViewController.swift */; };
 		C5FCFB2F1F961ABA0083A116 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5FCFB2E1F961ABA0083A116 /* GoogleService-Info.plist */; };
 		DF9F944A53C13294FC36C793 /* Pods_TennisBBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3479508B37202A61003BC5F6 /* Pods_TennisBBTests.framework */; };
 		E43E5A889A062AE25BD3089B /* Pods_TennisBB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2ADC4B1DE07F8F1FE71A5F /* Pods_TennisBB.framework */; };
@@ -77,7 +74,6 @@
 		C51C43771FCD70A600486D2F /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		C52DA6D41EE6ACB000FF570C /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52DA6D51EE6ACB000FF570C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
-		C536A1561F557506003D6786 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
 		C536A1581F569A34003D6786 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		C536A1711F5EACED003D6786 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
 		C536A1721F5EACED003D6786 /* join.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = join.png; sourceTree = "<group>"; };
@@ -99,7 +95,6 @@
 		C55ABBB61E264F1800D38DE1 /* TennisBBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisBBUITests.swift; sourceTree = "<group>"; };
 		C55ABBB81E264F1800D38DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecruitmentViewController.swift; sourceTree = "<group>"; };
-		C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		C55ABBCA1E2F7E9400D38DE1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
 		C55ABBCC1E3397E600D38DE1 /* RecruitmentContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecruitmentContentsViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +102,6 @@
 		C5D85D3C1F10E074003D45FD /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
 		C5DB20F51E4CA6E50072CB3B /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
-		C5F9D2221FB1BF6A006E5D8E /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
 		C5FCFB2E1F961ABA0083A116 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,14 +192,12 @@
 				C55ABB9A1E264F1800D38DE1 /* Main.storyboard */,
 				C54463701F9B059800EE18DD /* SigninViewController.swift */,
 				C54463721F9B05B500EE18DD /* LoginViewController.swift */,
-				C5F9D2221FB1BF6A006E5D8E /* UserNameViewController.swift */,
 				C55ABBC41E264F8100D38DE1 /* RecruitmentViewController.swift */,
 				C55ABBCC1E3397E600D38DE1 /* RecruitmentContentsViewController.swift */,
 				C50F7AC82029C12100230AEE /* RecruitmentContentsViewEditViewController.swift */,
 				C536A1581F569A34003D6786 /* EditViewController.swift */,
 				C55ABB981E264F1800D38DE1 /* LookForViewController.swift */,
 				C512D0B81E38B971006BF204 /* LookForContentsViewController.swift */,
-				C55ABBC61E2F7AC000D38DE1 /* FriendViewController.swift */,
 				C55ABBC81E2F7BED00D38DE1 /* ConfigurationViewController.swift */,
 				C5D85D3E1F10E29D003D45FD /* HeaderViewController.swift */,
 				C51C43771FCD70A600486D2F /* Board.swift */,
@@ -214,7 +206,6 @@
 				C5D85D3C1F10E074003D45FD /* HeaderView.swift */,
 				C52DA6D51EE6ACB000FF570C /* CustomCell.xib */,
 				C5D85D391F10C4CF003D45FD /* HeaderView.xib */,
-				C536A1561F557506003D6786 /* ColorManager.swift */,
 				C55ABB961E264F1800D38DE1 /* AppDelegate.swift */,
 				C55ABB9D1E264F1800D38DE1 /* Assets.xcassets */,
 				C55ABBCA1E2F7E9400D38DE1 /* icon.png */,
@@ -583,14 +574,11 @@
 			files = (
 				C54463711F9B059800EE18DD /* SigninViewController.swift in Sources */,
 				C536A1591F569A34003D6786 /* EditViewController.swift in Sources */,
-				C55ABBC71E2F7AC000D38DE1 /* FriendViewController.swift in Sources */,
 				C54463731F9B05B500EE18DD /* LoginViewController.swift in Sources */,
 				C51C43781FCD70A600486D2F /* Board.swift in Sources */,
 				C55ABB991E264F1800D38DE1 /* LookForViewController.swift in Sources */,
 				C55ABBCD1E3397E600D38DE1 /* RecruitmentContentsViewController.swift in Sources */,
-				C5F9D2231FB1BF6A006E5D8E /* UserNameViewController.swift in Sources */,
 				C50F7AC92029C12100230AEE /* RecruitmentContentsViewEditViewController.swift in Sources */,
-				C536A1571F557506003D6786 /* ColorManager.swift in Sources */,
 				C55ABB971E264F1800D38DE1 /* AppDelegate.swift in Sources */,
 				C52DA6D61EE6ACB000FF570C /* CustomCell.swift in Sources */,
 				C5D85D3D1F10E074003D45FD /* HeaderView.swift in Sources */,

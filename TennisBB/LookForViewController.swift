@@ -40,9 +40,7 @@ class LookForViewController: UITableViewController {
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
         self.refreshControl = refresh
-        self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
-        navigationController?.navigationBar.barTintColor = ColorManager.barcolor
         navigationController?.navigationBar.tintColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
 //        navigationItem.rightBarButtonItem = editButtonItem
     }
@@ -90,7 +88,6 @@ class LookForViewController: UITableViewController {
         cell.placelabel.text = boards[indexPath.row].place
         cell.startlabel.text = "\(boards[indexPath.row].startTime + 8)時"
         cell.endlabel.text = "\(boards[indexPath.row].endTime + 8)時"
-        cell.backgroundColor = ColorManager.tablecolor
         return cell
     }
 

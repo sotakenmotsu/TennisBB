@@ -105,8 +105,6 @@ class RecruitmentContentsViewController: UIViewController, UIPickerViewDataSourc
         Comment.delegate = self
         Comment.textColor = UIColor.lightGray
         
-        self.view.backgroundColor = ColorManager.maincolor
-        postbutton.backgroundColor = ColorManager.buttoncolor
         postbutton.setTitleColor(.white, for: .normal)
         
         // Do any additional setup after loading the view.
@@ -266,10 +264,6 @@ class RecruitmentContentsViewController: UIViewController, UIPickerViewDataSourc
             })
             
         }
-    }
-    
-    @IBAction func backbutton(_ segue: UIStoryboard) {
-        self.view.backgroundColor = ColorManager.buttoncolor
     }
 }
 

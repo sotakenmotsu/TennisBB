@@ -26,7 +26,6 @@ class RecruitmentContentsViewEditViewController: UIViewController, UITableViewDe
         headerView.setContents(contents: board!, isHidden: false)
         headerView.delegate = self
         tableView.tableHeaderView = headerView
-        self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
 
         // Do any additional setup after loading the view.

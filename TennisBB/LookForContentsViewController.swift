@@ -27,7 +27,6 @@ class LookForContentsViewController: UIViewController, UITableViewDelegate, UITa
         headerView.frame = CGRect(x: 0, y: 0, width: sizewidth, height: 340)
         headerView.setContents(contents: board!, isHidden: true)
         tableView.tableHeaderView = headerView
-        self.view.backgroundColor = ColorManager.maincolor
         tableView.tableFooterView = UIView(frame: .zero)
 
         // Do any additional setup after loading the view.

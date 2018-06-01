@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ri3-eH-nin">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Look For Contents View Controller-->
+        <!--詳細-->
         <scene sceneID="qcU-TP-80S">
             <objects>
                 <viewController id="ik0-pF-xQG" customClass="LookForContentsViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4UA-4L-fr1"/>
+                    <navigationItem key="navigationItem" title="詳細" id="4UA-4L-fr1"/>
                     <connections>
                         <outlet property="tableView" destination="hsB-x6-cEw" id="jIn-dT-ddA"/>
                     </connections>
@@ -293,25 +293,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue-blurred-background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Rvv-4H-Jac">
-                                <rect key="frame" x="-166" y="-21" width="707" height="708"/>
+                                <rect key="frame" x="-166" y="-14" width="707" height="708"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-OM-aBc">
-                                <rect key="frame" x="53" y="218" width="269" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nBY-dN-STs">
-                                <rect key="frame" x="53" y="265" width="269" height="30"/>
+                                <rect key="frame" x="53" y="195" width="269" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uT-Fy-a3y">
-                                <rect key="frame" x="94" y="362" width="186" height="46"/>
+                                <rect key="frame" x="94" y="310" width="186" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
@@ -323,7 +316,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ようこそ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jy3-lG-Qp3">
-                                <rect key="frame" x="126" y="166" width="122" height="36"/>
+                                <rect key="frame" x="126" y="151" width="122" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -343,7 +336,14 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qZQ-21-Ssg">
-                                <rect key="frame" x="53" y="318" width="269" height="30"/>
+                                <rect key="frame" x="53" y="271" width="269" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-OM-aBc">
+                                <rect key="frame" x="53" y="233" width="269" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -358,6 +358,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="nBY-dN-STs" id="zrI-qC-e11"/>
                         <outlet property="passwordTextField" destination="L0F-OM-aBc" id="LXy-qJ-Ox4"/>
+                        <outlet property="usernameTextField" destination="qZQ-21-Ssg" id="049-aX-9My"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXv-ug-Xhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,7 +383,7 @@
             </objects>
             <point key="canvasLocation" x="-1828" y="49"/>
         </scene>
-        <!--Item-->
+        <!--探す-->
         <scene sceneID="qSG-x6-Yfn">
             <objects>
                 <tableViewController id="cbl-AH-Bxv" customClass="LookForViewController" customModule="TennisBB" customModuleProvider="target" sceneMemberID="viewController">
@@ -410,7 +411,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="tmg-bd-SEG"/>
-                    <navigationItem key="navigationItem" id="e3x-87-DC5"/>
+                    <navigationItem key="navigationItem" title="探す" id="e3x-87-DC5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08s-PJ-wcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

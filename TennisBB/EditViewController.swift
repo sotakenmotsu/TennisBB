@@ -102,9 +102,7 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         
         Comment.delegate = self
         Comment.textColor = UIColor.black
-        
-        self.view.backgroundColor = ColorManager.maincolor
-        postbutton.backgroundColor = ColorManager.buttoncolor
+
         postbutton.setTitleColor(.white, for: .normal)
         
         self.setContents()
@@ -266,10 +264,6 @@ class EditViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             })
             
         }
-    }
-    
-    @IBAction func backbutton(_ segue: UIStoryboard) {
-        self.view.backgroundColor = ColorManager.buttoncolor
     }
     
     func setContents() {
