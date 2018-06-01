@@ -44,7 +44,7 @@ class LookForViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         navigationController?.navigationBar.barTintColor = ColorManager.barcolor
         navigationController?.navigationBar.tintColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
-        navigationItem.rightBarButtonItem = editButtonItem
+//        navigationItem.rightBarButtonItem = editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +52,7 @@ class LookForViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
+  /*  override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         self.tableView.setEditing(editing, animated: animated)
     }
@@ -75,7 +75,7 @@ class LookForViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         return "削除"
-    }
+    } */
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

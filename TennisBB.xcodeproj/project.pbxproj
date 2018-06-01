@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE31DFA7371E94DE45BBB983 /* Pods_TennisBBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38048A9D8BFD6BF55072BC65 /* Pods_TennisBBUITests.framework */; };
+		C50465C620B95F9900485050 /* blue-blurred-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C50465C520B95F9900485050 /* blue-blurred-background.jpg */; };
 		C50F7AC92029C12100230AEE /* RecruitmentContentsViewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50F7AC82029C12100230AEE /* RecruitmentContentsViewEditViewController.swift */; };
 		C512D0B91E38B971006BF204 /* LookForContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512D0B81E38B971006BF204 /* LookForContentsViewController.swift */; };
 		C51C43781FCD70A600486D2F /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51C43771FCD70A600486D2F /* Board.swift */; };
@@ -70,6 +71,7 @@
 		567799FCA473B7561FF2A3B2 /* Pods-TennisBBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBBTests/Pods-TennisBBTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0CF9EFF539D25939800894F /* Pods-TennisBB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBB.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBB/Pods-TennisBB.release.xcconfig"; sourceTree = "<group>"; };
 		A7AF2C9F48118799F0130C79 /* Pods-TennisBBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisBBUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisBBUITests/Pods-TennisBBUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C50465C520B95F9900485050 /* blue-blurred-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blue-blurred-background.jpg"; sourceTree = "<group>"; };
 		C50F7AC82029C12100230AEE /* RecruitmentContentsViewEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentContentsViewEditViewController.swift; sourceTree = "<group>"; };
 		C512D0B81E38B971006BF204 /* LookForContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookForContentsViewController.swift; sourceTree = "<group>"; };
 		C51C43771FCD70A600486D2F /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
@@ -147,6 +149,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C50465C420B95F9900485050 /* design */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = design;
+			sourceTree = SOURCE_ROOT;
+		};
 		C536A1701F5EACED003D6786 /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +163,8 @@
 				C536A1721F5EACED003D6786 /* join.png */,
 				C536A1731F5EACED003D6786 /* recruit.png */,
 				C536A1741F5EACED003D6786 /* settings.png */,
+				C50465C520B95F9900485050 /* blue-blurred-background.jpg */,
+				C50465C420B95F9900485050 /* design */,
 			);
 			name = icons;
 			path = barbuttonicon/icons;
@@ -374,6 +385,7 @@
 				C536A1771F5EACED003D6786 /* recruit.png in Resources */,
 				C536A1781F5EACED003D6786 /* settings.png in Resources */,
 				C55ABBA11E264F1800D38DE1 /* LaunchScreen.storyboard in Resources */,
+				C50465C620B95F9900485050 /* blue-blurred-background.jpg in Resources */,
 				C55ABB9E1E264F1800D38DE1 /* Assets.xcassets in Resources */,
 				C5FCFB2F1F961ABA0083A116 /* GoogleService-Info.plist in Resources */,
 				C55ABB9C1E264F1800D38DE1 /* Main.storyboard in Resources */,

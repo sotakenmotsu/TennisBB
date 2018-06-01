@@ -34,12 +34,19 @@ class HeaderView: UIView {
     
     func setContents(contents: Board, isHidden: Bool) {
         place.text = contents.place
+        place.textColor = UIColor.black
         date.text = contents.date
+        date.textColor = UIColor.black
         Stime.text = "\(contents.startTime + 8)時"
+        Stime.textColor = UIColor.black
         Etime.text = "\(contents.endTime + 8)時"
+        Etime.textColor = UIColor.black
         member.text = "\(contents.member + 0)人"
+        member.textColor = UIColor.black
         level.text = "Lv.\(contents.level + 0)"
+        level.textColor = UIColor.black
         comment.text = contents.comment
+        comment.textColor = UIColor.black
         back.backgroundColor = ColorManager.buttoncolor
         edit.backgroundColor = ColorManager.buttoncolor
         back.setTitleColor(.white, for: .normal)
