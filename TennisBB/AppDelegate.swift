@@ -21,6 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let signinView = SigninViewController()
+        let firstView = LookForViewController()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        if Auth.auth().currentUser != nil {
+            self.window?.rootViewController = signinView
+        } else {
+            self.window?.rootViewController = firstView
+        }
         return true
     }
 
