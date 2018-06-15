@@ -10,17 +10,21 @@ import UIKit
 import Foundation
 import Firebase
 
-class LookForViewController: UITableViewController {
+class LookForViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var boards = [Board]()
     var board: Board?
     var bid = [String]()
     var database: Firestore = Firestore.firestore()
+    @IBOutlet var tableView: UITableView!
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         database.collection("Boards").getDocuments(completion: { (documents, error) in
             if error == nil {
                 print("gotdocuments")
@@ -36,10 +40,10 @@ class LookForViewController: UITableViewController {
                 print("didn't getdocuments")
             }
         })
-        self.tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        //self.tableView.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
         let refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshTableView), for: UIControlEvents.valueChanged)
-        self.refreshControl = refresh
+//        self.tableView.RefreshControl = refresh
         tableView.tableFooterView = UIView(frame: .zero)
         navigationController?.navigationBar.tintColor = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
 //        navigationItem.rightBarButtonItem = editButtonItem
@@ -75,7 +79,7 @@ class LookForViewController: UITableViewController {
         return "削除"
     } */
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -83,19 +87,19 @@ class LookForViewController: UITableViewController {
         self.performSegue(withIdentifier: "toLContentsViewController", sender: nil)
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         cell.placelabel.text = boards[indexPath.row].place
         cell.startlabel.text = "\(boards[indexPath.row].startTime + 8)時"
         cell.endlabel.text = "\(boards[indexPath.row].endTime + 8)時"
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return boards.count
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         board = boards[indexPath.row]
         if board != nil {
             performSegue(withIdentifier: "toLContentsView", sender: nil)
@@ -126,7 +130,7 @@ class LookForViewController: UITableViewController {
                 print("didn't getdocuments")
             }
         })
-        refreshControl?.endRefreshing()
+//        refreshControl?.endRefreshing()
     }
 
 

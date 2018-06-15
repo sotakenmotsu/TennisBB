@@ -13,6 +13,8 @@ class CustomCell: UITableViewCell {
     @IBOutlet var placelabel: UILabel!
     @IBOutlet var startlabel: UILabel!
     @IBOutlet var endlabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
