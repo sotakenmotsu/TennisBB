@@ -29,7 +29,6 @@ class LookForContentsViewController: UIViewController, UITableViewDelegate, UITa
         tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView(frame: .zero)
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let signinView = SigninViewController()
-        let firstView = LookForViewController()
+        let firstView = SearchViewController()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         if Auth.auth().currentUser != nil {
             self.window?.rootViewController = signinView
