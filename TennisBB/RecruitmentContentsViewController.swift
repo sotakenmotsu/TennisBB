@@ -44,6 +44,7 @@ class RecruitmentContentsViewController: UIViewController, UIPickerViewDataSourc
     var database: Firestore = Firestore.firestore()
     var ref: DocumentReference? = nil
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

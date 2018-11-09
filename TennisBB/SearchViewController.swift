@@ -12,14 +12,10 @@ import Firebase
 
 class SearchViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
-    @IBOutlet var tableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,7 +24,7 @@ class SearchViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SearchViewControllerTableViewCell
         cell.placelabel.text  = "swift"
         cell.endlabel.text = "swift"
         cell.startlabel.text = "Swift"

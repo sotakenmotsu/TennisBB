@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GfT-ja-er1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mP3-ra-Dw4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="GfT-ja-er1" kind="relationship" relationship="rootViewController" id="GK7-RP-1E6"/>
+                        <segue destination="GfT-ja-er1" kind="relationship" relationship="rootViewController" id="LQa-bR-TVf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHJ-g7-OlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -400,7 +400,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="137" id="tLI-fg-AdS" customClass="CustomCell" customModule="TennisBB" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="137" id="tLI-fg-AdS" customClass="SearchViewControllerTableViewCell" customModule="TennisBB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="137"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tLI-fg-AdS" id="Tf6-B6-5yC">
@@ -438,21 +438,22 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="endlabel" destination="KaV-AS-ePu" id="lnD-bs-2z4"/>
-                                            <outlet property="placelabel" destination="ajR-0k-epu" id="1eB-Hh-vsy"/>
-                                            <outlet property="startlabel" destination="ZLM-7N-sgT" id="wrE-XH-ov0"/>
+                                            <outlet property="endlabel" destination="KaV-AS-ePu" id="u5p-Iy-v3W"/>
+                                            <outlet property="placelabel" destination="ajR-0k-epu" id="qh7-ig-fib"/>
+                                            <outlet property="startlabel" destination="ZLM-7N-sgT" id="Q6Z-Nf-Mh7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GfT-ja-er1" id="Qqa-0m-mMA"/>
+                                    <outlet property="delegate" destination="GfT-ja-er1" id="M7k-Ly-vcI"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="lKL-EX-bm3"/>
-                    <connections>
-                        <outlet property="tableView" destination="TMM-j0-JON" id="1Uc-yD-hko"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYk-Bz-o8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
